@@ -1,0 +1,470 @@
+/* =========================================================
+   SmartCampus Election - Forms Stylesheet
+   Upgraded form controls, validation, auth pages, role switcher
+========================================================= */
+
+form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.form-grid.two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-group {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-weight: 900;
+  color: var(--primary-green-dark);
+  font-size: 0.96rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 13px;
+  background: var(--white);
+  color: var(--text-dark);
+  transition: var(--transition-fast);
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: rgba(20, 107, 58, 0.45);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 4px rgba(20, 107, 58, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9aa7b8;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 125px;
+}
+
+select {
+  cursor: pointer;
+}
+
+.checkbox-inline,
+.radio-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.checkbox-inline input,
+.radio-inline input {
+  width: auto;
+  accent-color: var(--primary-green);
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.otp-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.otp-group input {
+  flex: 1;
+}
+
+/* Role Switcher */
+.role-switcher {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0 22px;
+  padding: 6px;
+  background: var(--light-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-soft);
+}
+
+.role-btn {
+  padding: 12px;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 900;
+  transition: var(--transition-fast);
+  color: var(--text-muted);
+}
+
+.role-btn:hover {
+  background: var(--white);
+  color: var(--primary-green-dark);
+}
+
+.role-btn.active {
+  background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
+  color: var(--white);
+  box-shadow: 0 8px 18px rgba(20, 107, 58, 0.2);
+}
+
+/* Validation */
+input.error,
+select.error,
+textarea.error {
+  border-color: var(--secondary-red);
+  box-shadow: 0 0 0 4px rgba(198, 40, 40, 0.12);
+}
+
+input.success,
+select.success,
+textarea.success {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 4px rgba(20, 107, 58, 0.08);
+}
+
+.validation-text {
+  font-size: 0.9rem;
+  color: var(--secondary-red);
+  font-weight: 700;
+}
+
+/* Auth Cards */
+.auth-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-green), var(--secondary-red), var(--accent-gold));
+}
+
+.auth-card h2 {
+  text-align: center;
+  color: var(--primary-green-dark);
+  margin-bottom: 10px;
+  font-size: 1.85rem;
+  letter-spacing: -0.03em;
+}
+
+/* Form inside cards */
+.card form {
+  margin-top: 2px;
+}
+
+/* Inline form panels */
+.filter-bar.card {
+  box-shadow: var(--shadow-sm);
+  background:
+    linear-gradient(180deg, #ffffff, #fbfdff);
+}
+
+/* Compact controls for table/admin pages */
+.dashboard-panel input,
+.dashboard-panel select,
+.dashboard-panel textarea {
+  background: #ffffff;
+}
+
+/* Disabled fields */
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background: #eef2f7;
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* Small helper for long forms */
+.form-group small {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* =========================================================
+   Admin Forms UI Upgrade
+   Add this at the bottom of forms.css
+========================================================= */
+
+body[data-page^="admin"] form,
+body[data-page="election-setup"] form {
+  gap: 20px;
+}
+
+body[data-page^="admin"] .form-group label,
+body[data-page="election-setup"] .form-group label {
+  color: var(--primary-green-dark);
+  font-weight: 950;
+}
+
+/* Admin Inputs */
+body[data-page^="admin"] input,
+body[data-page^="admin"] select,
+body[data-page^="admin"] textarea,
+body[data-page="election-setup"] input,
+body[data-page="election-setup"] select,
+body[data-page="election-setup"] textarea {
+  background: #ffffff;
+  border-radius: 13px;
+}
+
+/* Admin Filter Bars */
+body[data-page^="admin"] .filter-bar,
+body[data-page="election-setup"] .filter-bar {
+  background:
+    linear-gradient(180deg, #ffffff, #fbfdff);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Admin Form Submit Areas */
+body[data-page^="admin"] form .hero-actions,
+body[data-page="election-setup"] form .hero-actions {
+  margin-top: 4px;
+}
+
+/* Checkbox Admin Controls */
+body[data-page^="admin"] .checkbox-inline,
+body[data-page="election-setup"] .checkbox-inline {
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: var(--light-bg);
+  border: 1px solid var(--border-soft);
+  width: fit-content;
+}
+
+/* Ballot Config Inline Inputs */
+.ballot-config-row input[type="number"],
+.ballot-config-row input[type="text"] {
+  min-height: 44px;
+}
+
+/* Better Admin Textarea */
+body[data-page^="admin"] textarea,
+body[data-page="election-setup"] textarea {
+  line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body[data-page^="admin"] .checkbox-inline,
+  body[data-page="election-setup"] .checkbox-inline {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   Role Selection Cards UI Redesign
+========================================================= */
+.role-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.role-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--white);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.role-card:hover {
+  border-color: rgba(20, 107, 58, 0.4);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.role-card.active {
+  border-color: var(--primary-green);
+  background: linear-gradient(180deg, var(--white), var(--primary-green-soft));
+  box-shadow: 0 8px 24px rgba(20, 107, 58, 0.08);
+}
+
+.role-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--light-bg);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition: var(--transition-fast);
+}
+
+.role-card.active .role-card-badge {
+  background: var(--primary-green-dark);
+  color: var(--white);
+}
+
+.role-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--light-bg);
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  transition: var(--transition-fast);
+}
+
+.role-card:hover .role-card-icon {
+  color: var(--primary-green);
+  background: var(--primary-green-soft);
+}
+
+.role-card.active .role-card-icon {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
+  box-shadow: 0 4px 12px rgba(20, 107, 58, 0.2);
+}
+
+.role-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.role-card-title {
+  font-size: 1.05rem;
+  font-weight: 850;
+  color: var(--text-dark);
+  margin: 0;
+  transition: var(--transition-fast);
+}
+
+.role-card.active .role-card-title {
+  color: var(--primary-green-dark);
+}
+
+.role-card-description {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+.role-card.active .role-card-description {
+  color: rgba(15, 79, 43, 0.8);
+}
+
+/* Victory Gold bottom line indicator for active card */
+.role-card.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .role-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .role-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   Password Visibility Toggle Styling
+========================================================= */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-container input {
+  padding-right: 48px; /* Leave space for the eye icon button */
+}
+
+.password-toggle {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #9aa7b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+}
+
+.password-toggle:hover {
+  color: var(--primary-green);
+  background: rgba(20, 107, 58, 0.08);
+}
+
+.password-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(20, 107, 58, 0.15);
+}
+
+.password-toggle svg {
+  width: 20px;
+  height: 20px;
+}

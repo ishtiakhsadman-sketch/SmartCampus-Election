@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCampus Election | Candidate Dashboard</title>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+<body data-page="candidate-dashboard">
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+      <ul class="nav-menu candidate-top-nav" id="navMenu" data-candidate-top-nav>
+        <li><a href="candidate-dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="nomination.html" class="nav-link">Nomination</a></li>
+        <li><a href="candidate-manage-profile.html" class="nav-link">Manage Profile</a></li>
+        <li><a href="candidate-campaign.html" class="nav-link">Campaign</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+
+    </header>
+
+  <section class="page-banner">
+      <div class="container">
+        <h1>Candidate Dashboard</h1>
+        <p>Manage nomination progress, profile readiness, and campaign activity from one place.</p>
+      </div>
+    </section>
+
+  <main class="dashboard-page section">
+    <div class="container dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar card">
+        <h3>Candidate Panel</h3>
+        <ul class="dashboard-nav">
+          <li><a href="candidate-dashboard.html" class="dashboard-link active">Dashboard Home</a></li>
+          <li><a href="nomination.html" class="dashboard-link">Nomination Form</a></li>
+          <li><a href="candidate-manage-profile.html" class="dashboard-link">Manage Profile</a></li>
+          <li><a href="candidate-campaign.html" class="dashboard-link">Campaign Preview</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <section class="dashboard-main">
+        <!-- Welcome / Overview -->
+        <article class="card dashboard-panel welcome-panel">
+          <div class="panel-head">
+            <div>
+              <span class="badge badge-success">Candidate Access</span>
+              <h2>Welcome, Candidate</h2>
+              <p class="muted">
+                Track your nomination, improve your profile, and prepare your campaign presentation.
+              </p>
+            </div>
+            <div class="verification-box">
+              <span class="badge badge-gold">Profile In Progress</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Summary Cards -->
+        <div class="stats-grid four-stats">
+          <article class="stat-card">
+            <h3>Profile Completion</h3>
+            <p id="candidateProfileCompletion">—</p>
+          </article>
+          <article class="stat-card">
+            <h3>Nomination Status</h3>
+            <p id="candidateNominationStatus">—</p>
+          </article>
+          <article class="stat-card">
+            <h3>Chosen Position</h3>
+            <p id="candidateChosenPosition">—</p>
+          </article>
+          <article class="stat-card">
+            <h3>Photo &amp; Documents</h3>
+            <p id="candidatePhotoDocStatus">—</p>
+          </article>
+        </div>
+
+        <!-- Profile Progress -->
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Profile Completion Progress</h2>
+              <p class="muted">Complete key candidate profile elements before publication.</p>
+            </div>
+          </div>
+
+          <div class="result-bar-track" aria-label="Profile completion progress">
+            <div class="result-bar-fill" style="width: 72%;"></div>
+          </div>
+
+          <div class="dashboard-widget-list">
+            <article class="summary-row">
+              <div>
+                <h4>Bio</h4>
+                <p class="summary-muted">Completed</p>
+              </div>
+              <span class="badge badge-success">Done</span>
+            </article>
+
+            <article class="summary-row">
+              <div>
+                <h4>Manifesto</h4>
+                <p class="summary-muted">Completed</p>
+              </div>
+              <span class="badge badge-success">Done</span>
+            </article>
+
+            <article class="summary-row">
+              <div>
+                <h4>Campaign Slogan</h4>
+                <p class="summary-muted">Completed</p>
+              </div>
+              <span class="badge badge-success">Done</span>
+            </article>
+
+            <article class="summary-row">
+              <div>
+                <h4>Photo & Documents</h4>
+                <p class="summary-muted">Still needs placeholder upload confirmation</p>
+              </div>
+              <span class="badge badge-danger">Pending</span>
+            </article>
+          </div>
+        </article>
+
+        <!-- Notices -->
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Commission Notices</h2>
+              <p class="muted">Important election office updates for candidates.</p>
+            </div>
+            <a href="notices.html" class="btn btn-outline">View All Notices</a>
+          </div>
+
+          <div id="candidateNoticesPreview" class="dashboard-widget-list">
+            <!-- Notice preview inserted by helper script -->
+          </div>
+        </article>
+
+        <!-- Quick Actions -->
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Quick Action Shortcuts</h2>
+              <p class="muted">Go directly to important candidate tasks.</p>
+            </div>
+          </div>
+
+          <div class="card-grid three-col">
+            <a href="nomination.html" class="card action-card">
+              <h3>Complete Nomination</h3>
+              <p>Review and submit the nomination form with candidate details and declarations.</p>
+            </a>
+
+            <a href="candidate-manage-profile.html" class="card action-card">
+              <h3>Update Public Profile</h3>
+              <p>Edit your bio, manifesto, slogan, and contact placeholders.</p>
+            </a>
+
+            <a href="candidate-campaign.html" class="card action-card">
+              <h3>Preview Campaign Page</h3>
+              <p>See how your public campaign presentation will appear to voters.</p>
+            </a>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>A sample frontend-only student election website for academic use.</p>
+      </div>
+      <div>
+        <h4>Candidate Tools</h4>
+        <ul class="footer-links">
+          <li><a href="nomination.html">Nomination</a></li>
+          <li><a href="candidate-manage-profile.html">Manage Profile</a></li>
+          <li><a href="candidate-campaign.html">Campaign</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Election</h4>
+        <ul class="footer-links">
+          <li><a href="positions.html">Positions</a></li>
+          <li><a href="candidates.html">Candidate Directory</a></li>
+          <li><a href="notices.html">Notices</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/candidate-navigation.js?v=1"></script>
+  <script>
+    /* ── Candidate Dashboard — Live Data ─────────────────────────── */
+    document.addEventListener("DOMContentLoaded", async function () {
+
+      // Load election notices (auto-refreshed every 15s)
+      if (window.loadLatestElectionNotices) {
+        window.loadLatestElectionNotices("candidateNoticesPreview", 3);
+        setInterval(() => window.loadLatestElectionNotices("candidateNoticesPreview", 3), 15000);
+      }
+
+      // ── Fetch live dashboard data from backend ──────────────────
+      try {
+        const res = await apiRequest("/candidate/dashboard");
+        if (!res.success) throw new Error(res.message || "Failed to load dashboard");
+
+        const d = res.dashboard;
+
+        // Stat cards
+        const pct = d.profileCompletion ?? 0;
+        document.getElementById("candidateProfileCompletion").textContent = pct + "%";
+        document.getElementById("candidateNominationStatus").textContent  = d.nominationStatus || "—";
+        document.getElementById("candidateChosenPosition").textContent    = d.chosenPosition   || "—";
+        const photoDocEl = document.getElementById("candidatePhotoDocStatus");
+        if (photoDocEl) photoDocEl.textContent = d.photoDocStatus || "—";
+
+        // Progress bar
+        const bar = document.querySelector(".result-bar-fill");
+        if (bar) bar.style.width = pct + "%";
+
+        // Welcome badge
+        const verBox = document.querySelector(".verification-box .badge");
+        if (verBox) {
+          const status = d.nominationStatus || "";
+          if (status === "Approved") {
+            verBox.className = "badge badge-success";
+            verBox.textContent = "Nomination Approved";
+          } else if (status === "Rejected") {
+            verBox.className = "badge badge-danger";
+            verBox.textContent = "Nomination Rejected";
+          } else if (status === "Pending") {
+            verBox.className = "badge badge-warning";
+            verBox.textContent = "Awaiting Review";
+          } else {
+            verBox.className = "badge badge-gold";
+            verBox.textContent = "Profile In Progress";
+          }
+        }
+
+        // ── Progress checklist rows ─────────────────────────────────
+        function setRow(rowEl, isDone, doneText, pendingText) {
+          if (!rowEl) return;
+          const desc  = rowEl.querySelector("p.summary-muted");
+          const badge = rowEl.querySelector("span.badge");
+          if (isDone) {
+            if (desc)  desc.textContent  = doneText;
+            if (badge) { badge.className = "badge badge-success"; badge.textContent = "Done"; }
+          } else {
+            if (desc)  desc.textContent  = pendingText;
+            if (badge) { badge.className = "badge badge-danger";  badge.textContent = "Pending"; }
+          }
+        }
+
+        const rows = document.querySelectorAll(".dashboard-widget-list .summary-row");
+        // rows[0] = Bio, rows[1] = Manifesto, rows[2] = Slogan, rows[3] = Photo & Docs
+        if (rows[0]) setRow(rows[0], d.hasBio,       "Completed", "Not yet added");
+        if (rows[1]) setRow(rows[1], d.hasManifesto,  "Completed", "Not yet added");
+        if (rows[2]) setRow(rows[2], d.hasSlogan,     "Completed", "Not yet added");
+
+        // Photo & Documents — combined status
+        if (rows[3]) {
+          const desc  = rows[3].querySelector("p.summary-muted");
+          const badge = rows[3].querySelector("span.badge");
+          const st    = d.photoDocStatus || "Pending";
+
+          if (desc) desc.textContent = st === "Completed"
+            ? "Photo and documents uploaded"
+            : st === "Documents Pending"
+              ? "Profile photo uploaded — documents still needed"
+              : st === "Photo Pending"
+                ? "Documents uploaded — profile photo still needed"
+                : "No files uploaded yet";
+
+          if (badge) {
+            if (st === "Completed") {
+              badge.className = "badge badge-success"; badge.textContent = "Completed";
+            } else if (st === "Pending") {
+              badge.className = "badge badge-danger";  badge.textContent = "Pending";
+            } else {
+              badge.className = "badge badge-warning"; badge.textContent = st;
+            }
+          }
+        }
+
+      } catch (err) {
+        console.error("Candidate dashboard load error:", err);
+      }
+    });
+  </script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

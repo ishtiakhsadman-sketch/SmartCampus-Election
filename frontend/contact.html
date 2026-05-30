@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SmartCampus Election | Contact</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/modern-design.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+
+<body data-page="contact">
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="positions.html" class="nav-link">Positions</a></li>
+        <li><a href="candidates.html" class="nav-link">Candidates</a></li>
+        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li><a href="notices.html" class="nav-link">Notices</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline btn-modern">Login</a></li>
+        <!-- Auth items injected by renderPublicNavAuth() in api.js -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+      <div class="container contact-hero-grid">
+        <div class="contact-hero-content">
+          <div class="contact-badge-row">
+            <span class="badge badge-success">Election Support</span>
+            <span class="badge badge-gold">BUP Campus</span>
+            <span class="badge badge-danger">Help Desk</span>
+          </div>
+
+          <h1>Contact Election Office</h1>
+
+          <p>
+            Send inquiries, report voting issues, ask about registration, or find the
+            election support desk at Bangladesh University of Professionals.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contactFormSection" class="btn btn-primary">Send Message</a>
+            <a href="#campusMapSection" class="btn btn-secondary">View Map</a>
+            <a href="faq.html" class="btn btn-outline">Read FAQ</a>
+          </div>
+        </div>
+
+        <aside class="card contact-hero-card">
+          <span class="contact-hero-icon">📍</span>
+          <h2>Find the election support desk</h2>
+          <p>
+            Visit the campus office for election support, voting guidance, and official help.
+          </p>
+
+          <div class="contact-hero-mini-grid">
+            <div>
+              <strong>BUP</strong>
+              <span>Campus</span>
+            </div>
+
+            <div>
+              <strong>9-4</strong>
+              <span>Support Hours</span>
+            </div>
+
+            <div>
+              <strong>Desk</strong>
+              <span>Election Help</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="section contact-main-section" id="contactFormSection">
+      <div class="container contact-layout-premium">
+        <!-- Contact Form -->
+        <article class="card contact-form-card">
+          <span class="badge badge-success">Message Election Office</span>
+          <h2>Contact Form</h2>
+          <p class="muted">
+            Fill out the form below. The election office can review your question, issue,
+            or support request.
+          </p>
+
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="contactName">Full Name</label>
+              <input type="text" id="contactName" placeholder="Enter your name" />
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" placeholder="Enter your email" />
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" placeholder="Enter subject" />
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="6" placeholder="Write your message"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary full-width">
+              Send Message
+            </button>
+          </form>
+        </article>
+
+        <!-- Info + Map -->
+        <div class="stacked-info contact-info-stack">
+          <article class="card contact-office-card">
+            <span class="badge badge-gold">Office Information</span>
+            <h2>Election Office</h2>
+
+            <div class="contact-info-list">
+              <p><strong>Office:</strong> Student Affairs & Election Coordination Office</p>
+              <p><strong>Campus:</strong> Bangladesh University of Professionals</p>
+              <p><strong>Location:</strong> Mirpur Cantonment, Dhaka, Bangladesh</p>
+              <p><strong>Phone:</strong> +000 1234 567890</p>
+              <p><strong>Email:</strong> electionoffice@smartcampus.edu</p>
+              <p><strong>Hours:</strong> Sunday - Thursday, 9:00 AM - 4:00 PM</p>
+            </div>
+          </article>
+
+          <article class="card contact-map-card" id="campusMapSection">
+            <div class="contact-map-head">
+              <div>
+                <span class="badge badge-success">Google Map</span>
+                <h2>Find Us on Campus</h2>
+                <p>
+                  Bangladesh University of Professionals, Mirpur Cantonment, Dhaka.
+                </p>
+              </div>
+
+              <span class="contact-map-pin">🗺️</span>
+            </div>
+
+            <div class="contact-map-frame">
+              <iframe
+                src="https://www.google.com/maps?q=Bangladesh%20University%20of%20Professionals%20Mirpur%20Cantonment%20Dhaka&output=embed"
+                width="100%"
+                height="360"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+
+            <div class="contact-map-footer">
+              <p>
+                Use the map to locate BUP campus and plan your visit to the election support desk.
+              </p>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Bangladesh%20University%20of%20Professionals%20Mirpur%20Cantonment%20Dhaka"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary">
+                Open in Google Maps
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Cards -->
+    <section class="section light-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Support Areas</p>
+          <h2>What can you contact us about?</h2>
+          <p>
+            Students and candidates can use this page for common election-related support needs.
+          </p>
+        </div>
+
+        <div class="contact-support-grid">
+          <article class="card contact-support-card">
+            <span class="contact-support-icon">🗳️</span>
+            <h3>Voting Help</h3>
+            <p>Ask questions about ballot access, vote review, or submission flow.</p>
+          </article>
+
+          <article class="card contact-support-card">
+            <span class="contact-support-icon">👤</span>
+            <h3>Account Support</h3>
+            <p>Report login, registration, OTP, or student verification issues.</p>
+          </article>
+
+          <article class="card contact-support-card">
+            <span class="contact-support-icon">📢</span>
+            <h3>Official Notices</h3>
+            <p>Request clarification about deadlines, schedule updates, or announcements.</p>
+          </article>
+
+          <article class="card contact-support-card">
+            <span class="contact-support-icon">✅</span>
+            <h3>Candidate Support</h3>
+            <p>Ask about nomination, verification, profile updates, or campaign information.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer upgraded-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>
+          A student-centered digital election platform for transparent, organized,
+          and accessible campus leadership selection.
+        </p>
+      </div>
+
+      <div>
+        <h4>Office</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="notices.html">Notices</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Access</h4>
+        <ul class="footer-links">
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="forgot-password.html">Reset Password</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/mock-data.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/contact.js"></script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

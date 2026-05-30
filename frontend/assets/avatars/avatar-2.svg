@@ -1,0 +1,39 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c62828;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#146b3a;stop-opacity:0.15" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <circle cx="100" cy="100" r="100" fill="url(#bg2)"/>
+  <circle cx="100" cy="100" r="95" fill="#f8f4f0"/>
+  
+  <!-- Head -->
+  <circle cx="100" cy="70" r="35" fill="#e8c9a0"/>
+  
+  <!-- Hair -->
+  <path d="M 70 50 Q 65 30 100 30 Q 135 30 130 50 Q 130 60 100 62 Q 70 60 70 50" fill="#8b4513"/>
+  
+  <!-- Eyes -->
+  <circle cx="82" cy="68" r="5" fill="#8b4513"/>
+  <circle cx="118" cy="68" r="5" fill="#8b4513"/>
+  <circle cx="83" cy="67" r="2" fill="#ffffff"/>
+  <circle cx="119" cy="67" r="2" fill="#ffffff"/>
+  
+  <!-- Nose -->
+  <ellipse cx="100" cy="75" rx="2" ry="4" fill="#d4a574"/>
+  
+  <!-- Smile -->
+  <path d="M 82 82 Q 100 90 118 82" stroke="#8b4513" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Body -->
+  <ellipse cx="100" cy="130" rx="30" ry="40" fill="#c62828"/>
+  
+  <!-- Collar -->
+  <path d="M 75 115 L 80 125 L 100 120 L 120 125 L 125 115" fill="#ffffff"/>
+  
+  <!-- Arms -->
+  <ellipse cx="60" cy="128" rx="12" ry="30" fill="#e8c9a0"/>
+  <ellipse cx="140" cy="128" rx="12" ry="30" fill="#e8c9a0"/>
+</svg>

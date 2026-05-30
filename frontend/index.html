@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SmartCampus Election | Home</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/modern-design.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+
+<body data-page="index">
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="positions.html" class="nav-link">Positions</a></li>
+        <li><a href="candidates.html" class="nav-link">Candidates</a></li>
+        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li><a href="notices.html" class="nav-link">Notices</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <!-- Auth items injected by renderPublicNavAuth() in api.js -->
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bg-pattern-shapes">
+    <!-- Modern Hero Section -->
+    <section class="home-hero bg-hero-glow fade-in">
+      <div class="container home-hero-grid">
+        <div class="home-hero-content">
+          <div class="hero-badge-row">
+            <span class="badge badge-success">Student Leadership Election 2026</span>
+            <span class="badge badge-gold">Voting Opens Soon</span>
+          </div>
+
+          <h1 class="home-hero-title">
+            Your vote shapes the next generation of campus leadership.
+          </h1>
+
+          <p class="home-hero-subtitle">
+            SmartCampus Election helps students explore candidates, understand positions,
+            follow official notices, and cast their vote through a simple digital voting experience.
+          </p>
+
+          <div class="hero-actions">
+            <a href="candidates.html" class="btn btn-primary btn-modern">View Candidates</a>
+            <a href="ballot.html" class="btn btn-secondary btn-modern">Cast Your Vote</a>
+            <a href="register.html" class="btn btn-outline btn-modern">Register Now</a>
+          </div>
+
+          <div class="hero-trust-strip">
+            <div class="trust-pill">
+              <strong>Transparent</strong>
+              <span>Clear election information</span>
+            </div>
+            <div class="trust-pill">
+              <strong>Student-first</strong>
+              <span>Built for easy participation</span>
+            </div>
+            <div class="trust-pill">
+              <strong>Secure Flow</strong>
+              <span>Review before submission</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="home-countdown-card card modern-card float" style="animation-delay: 0.2s;">
+          <span class="badge badge-danger">Election Countdown</span>
+          <h2>Get ready to vote</h2>
+          <p class="muted">
+            Voting begins soon. Review candidates early and prepare your final choice.
+          </p>
+
+          <div id="countdown" class="countdown">
+            <div class="countdown-box">
+              <span id="days">00</span>
+              <small>Days</small>
+            </div>
+            <div class="countdown-box">
+              <span id="hours">00</span>
+              <small>Hours</small>
+            </div>
+            <div class="countdown-box">
+              <span id="minutes">00</span>
+              <small>Minutes</small>
+            </div>
+            <div class="countdown-box">
+              <span id="seconds">00</span>
+              <small>Seconds</small>
+            </div>
+          </div>
+
+          <div class="mini-stat-grid">
+            <div class="mini-stat">
+              <strong>16</strong>
+              <span>Positions</span>
+            </div>
+            <div class="mini-stat">
+              <strong>21</strong>
+              <span>Candidates</span>
+            </div>
+            <div class="mini-stat">
+              <strong>4</strong>
+              <span>Voting Steps</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- How to Vote -->
+    <section class="section vote-steps-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Simple Voting Journey</p>
+          <h2>How to Vote in 4 Steps</h2>
+          <p>
+            The voting process is designed to be easy, clear, and student-friendly from login to final submission.
+          </p>
+        </div>
+
+        <div class="vote-steps-grid">
+          <article class="card vote-step-card modern-card fade-in" style="animation-delay: 0.1s;">
+            <span class="step-icon">01</span>
+            <h3>Register or Login</h3>
+            <p>
+              Create your student account or login using your election access credentials.
+            </p>
+          </article>
+
+          <article class="card vote-step-card modern-card fade-in" style="animation-delay: 0.2s;">
+            <span class="step-icon">02</span>
+            <h3>Explore Candidates</h3>
+            <p>
+              Review candidate profiles, manifestos, departments, sessions, and goals.
+            </p>
+          </article>
+
+          <article class="card vote-step-card modern-card fade-in" style="animation-delay: 0.3s;">
+            <span class="step-icon">03</span>
+            <h3>Cast Ballot</h3>
+            <p>
+              Select your preferred candidates for available election positions.
+            </p>
+          </article>
+
+          <article class="card vote-step-card modern-card fade-in" style="animation-delay: 0.4s;">
+            <span class="step-icon">04</span>
+            <h3>Review & Submit</h3>
+            <p>
+              Check your selections carefully and confirm your final vote submission.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Vote / Why SmartCampus -->
+    <section class="section why-section light-section">
+      <div class="container why-grid">
+        <div class="why-content">
+          <p class="section-kicker">Why It Matters</p>
+          <h2>Why SmartCampus Election?</h2>
+          <p>
+            Campus elections are more than choosing names. They help students select representatives
+            who can speak for academic needs, campus services, student welfare, and future opportunities.
+          </p>
+
+          <div class="hero-actions">
+            <a href="about.html" class="btn btn-primary">Learn About Election</a>
+            <a href="schedule.html" class="btn btn-outline">View Schedule</a>
+          </div>
+        </div>
+
+        <div class="why-card-grid">
+          <article class="card why-card modern-card float" style="animation-delay: 0.1s;">
+            <span class="badge badge-success">Transparency</span>
+            <h3>Clear Information</h3>
+            <p>
+              Students can view positions, candidates, notices, and timelines from one organized platform.
+            </p>
+          </article>
+
+          <article class="card why-card modern-card float" style="animation-delay: 0.2s;">
+            <span class="badge badge-danger">Participation</span>
+            <h3>Easy Access</h3>
+            <p>
+              The design makes it easier for students to understand the process and take action quickly.
+            </p>
+          </article>
+
+          <article class="card why-card modern-card float" style="animation-delay: 0.3s;">
+            <span class="badge badge-gold">Leadership</span>
+            <h3>Student Voice</h3>
+            <p>
+              Every vote supports leadership, representation, and student-centered campus development.
+            </p>
+          </article>
+
+          <article class="card why-card modern-card float" style="animation-delay: 0.4s;">
+            <span class="badge badge-success">Confidence</span>
+            <h3>Review Before Submit</h3>
+            <p>
+              Voters can review their ballot before final confirmation to reduce mistakes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Positions -->
+    <section class="section featured-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Leadership Roles</p>
+          <h2>Featured Election Positions</h2>
+          <p>
+            Explore key roles students will vote for in the SmartCampus Election.
+          </p>
+        </div>
+
+        <div class="card-grid three-col featured-position-grid">
+          <article class="card featured-position-card modern-card card-premium">
+            <span class="badge badge-gold">Top Leadership</span>
+            <h3>Vice President (VP)</h3>
+            <p>
+              Supports executive leadership, policy implementation, and student representation.
+            </p>
+            <a href="positions.html" class="text-link">See Position Details</a>
+          </article>
+
+          <article class="card featured-position-card modern-card card-premium">
+            <span class="badge badge-gold">Core Office</span>
+            <h3>General Secretary (GS)</h3>
+            <p>
+              Coordinates organizational activities, meetings, and strategic decisions.
+            </p>
+            <a href="positions.html" class="text-link">See Position Details</a>
+          </article>
+
+          <article class="card featured-position-card modern-card card-premium">
+            <span class="badge badge-gold">Academic Growth</span>
+            <h3>Research & Publication Secretary</h3>
+            <p>
+              Supports research engagement, publications, and academic development.
+            </p>
+            <a href="positions.html" class="text-link">See Position Details</a>
+          </article>
+        </div>
+
+        <div class="section-cta center">
+          <a href="positions.html" class="btn btn-secondary">Explore All Positions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Candidate CTA -->
+    <section class="section candidate-cta-section">
+      <div class="container candidate-cta-box">
+        <div>
+          <p class="section-kicker">Know Before You Vote</p>
+          <h2>Compare candidates before making your choice.</h2>
+          <p>
+            Search candidates by name, department, or position and read their manifestos before casting your ballot.
+          </p>
+        </div>
+
+        <div class="candidate-cta-actions">
+          <a href="candidates.html" class="btn btn-primary btn-modern">Browse Candidates</a>
+          <a href="ballot.html" class="btn btn-white-outline btn-modern">Open Ballot</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Notices -->
+    <section class="section light-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Official Updates</p>
+          <h2>Latest Election Notices</h2>
+          <p>
+            Stay updated with deadlines, verification notices, campaign rules, and voting announcements.
+          </p>
+        </div>
+
+        <div id="noticePreview" class="card-grid three-col notice-preview-grid">
+          <!-- Notices preview inserted by JS -->
+        </div>
+
+        <div class="section-cta center">
+          <a href="notices.html" class="btn btn-secondary">View All Notices</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Election Timeline Preview -->
+    <section class="section timeline-home-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Election Roadmap</p>
+          <h2>Election Timeline</h2>
+          <p>
+            Follow each stage from official announcement to final result publication.
+          </p>
+        </div>
+
+        <div id="timelinePreview" class="timeline-preview">
+          <!-- Timeline preview inserted by JS -->
+        </div>
+
+        <div class="section-cta center">
+          <a href="schedule.html" class="btn btn-outline">See Full Schedule</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section cta-section">
+      <div class="container cta-box">
+        <div>
+          <p class="section-kicker">Ready to Participate?</p>
+          <h2>Be informed. Be prepared. Cast your vote.</h2>
+          <p>
+            Login to your student portal, review your candidate choices, and submit your ballot during the voting period.
+          </p>
+        </div>
+
+        <div class="cta-actions">
+          <a href="login.html" class="btn btn-primary btn-modern">Login</a>
+          <a href="register.html" class="btn btn-secondary btn-modern">Register</a>
+          <a href="ballot.html" class="btn btn-white-outline btn-modern">Cast Vote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer upgraded-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>
+          A student-centered digital election platform for transparent, organized,
+          and accessible campus leadership selection.
+        </p>
+        <p class="footer-trust-text">
+          Built for academic demonstration using HTML, CSS, Vanilla JavaScript, and localStorage simulation.
+        </p>
+      </div>
+
+      <div>
+        <h4>Election Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About Election</a></li>
+          <li><a href="positions.html">Positions</a></li>
+          <li><a href="candidates.html">Candidates</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="notices.html">Notices</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Student Support</h4>
+        <ul class="footer-links">
+          <li><a href="login.html">Login Portal</a></li>
+          <li><a href="register.html">Student Registration</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Office</a></li>
+        </ul>
+
+        <div class="footer-contact-box">
+          <p><strong>Election Office</strong></p>
+          <p>electionoffice@smartcampus.edu</p>
+          <p>Sunday - Thursday, 9:00 AM - 4:00 PM</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/notices.js"></script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

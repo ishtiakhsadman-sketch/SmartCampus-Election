@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SmartCampus Election | Review Ballot</title>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/modern-design.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+
+<body data-page="review-ballot">
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+      <ul class="nav-menu student-top-nav" id="navMenu" data-student-top-nav>
+        <li><a href="student-dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="student-profile.html" class="nav-link">Profile</a></li>
+        <li><a href="ballot.html" class="nav-link">Ballot</a></li>
+        <li><a href="review-ballot.html" class="nav-link">Review</a></li>
+        <li><a href="results.html" class="nav-link">Results</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+
+    </header>
+
+  <section class="page-banner">
+      <div class="container">
+        <h1>Review Your Ballot</h1>
+        <p>Carefully verify every selection before submitting your final vote.</p>
+      </div>
+    </section>
+
+  <main class="dashboard-page section bg-pattern-shapes">
+    <div class="container dashboard-layout review-layout">
+      <section class="dashboard-main">
+        <!-- Stepper -->
+        <article class="card dashboard-panel modern-card fade-in">
+          <div class="ballot-stepper">
+            <div class="step-item done">
+              <span class="step-number">1</span>
+              <span>Select Candidates</span>
+            </div>
+
+            <div class="step-item active">
+              <span class="step-number">2</span>
+              <span>Review Ballot</span>
+            </div>
+
+            <div class="step-item">
+              <span class="step-number">3</span>
+              <span>Confirm Submission</span>
+            </div>
+
+            <div class="step-item">
+              <span class="step-number">4</span>
+              <span>Vote Submitted</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review Summary -->
+        <article class="card dashboard-panel review-summary-panel modern-card fade-in" style="animation-delay: 0.1s;">
+          <div class="panel-head">
+            <div>
+              <span class="badge badge-gold">Review Required</span>
+              <h2>Selected Ballot Summary</h2>
+              <p class="muted">
+                These are the choices currently saved from your ballot page.
+              </p>
+            </div>
+
+            <a href="ballot.html" class="btn btn-outline">Edit Ballot</a>
+          </div>
+
+          <div id="reviewBallotSummary" class="summary-widget-list">
+            <!-- Summary inserted by ballot.js -->
+          </div>
+        </article>
+
+        <!-- Warning -->
+        <article class="card dashboard-panel warning-panel final-warning-panel modern-card fade-in" style="border: 2px solid var(--secondary-red); animation-delay: 0.2s;">
+          <span class="badge badge-danger pulse-glow">Final Submission Warning</span>
+          <h2>Please review carefully</h2>
+
+          <ul class="styled-list">
+            <li>Votes cannot be edited after final confirmation.</li>
+            <li>Make sure each selected candidate is correct.</li>
+            <li>Positions left blank may remain unvoted in this demo flow.</li>
+            <li>Only press confirm when you are fully sure.</li>
+          </ul>
+        </article>
+
+        <!-- Confirm Action -->
+        <article class="card dashboard-panel confirm-submit-panel modern-card fade-in" style="animation-delay: 0.3s;">
+          <div class="panel-head">
+            <div>
+              <h2>Ready to Submit?</h2>
+              <p class="muted">
+                Press confirm only after checking your full ballot summary.
+              </p>
+            </div>
+
+            <div class="review-actions">
+              <a href="ballot.html" class="btn btn-outline">Edit Ballot</a>
+              <button id="confirmSubmissionBtn" class="btn btn-primary" type="button">
+                Confirm Submission
+              </button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="dashboard-sidebar card review-guidance-card modern-card fade-in" style="animation-delay: 0.4s;">
+        <span class="badge badge-success">Submission Guidance</span>
+        <h3>Before confirming</h3>
+
+        <p class="muted">
+          Final confirmation saves the vote submission state in localStorage and redirects to the success page.
+        </p>
+
+        <div class="review-guidance-list">
+          <p><strong>Status:</strong> Awaiting Confirmation</p>
+          <p><strong>Can edit now:</strong> Yes</p>
+          <p><strong>Can edit after submit:</strong> No</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>A sample frontend-only student election website for academic use.</p>
+      </div>
+
+      <div>
+        <h4>Voting Flow</h4>
+        <ul class="footer-links">
+          <li><a href="ballot.html">Select Candidates</a></li>
+          <li><a href="review-ballot.html">Review Ballot</a></li>
+          <li><a href="vote-success.html">Success Page</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Student Area</h4>
+        <ul class="footer-links">
+          <li><a href="student-dashboard.html">Dashboard</a></li>
+          <li><a href="student-profile.html">Profile</a></li>
+          <li><a href="results.html">Results</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/student-navigation.js?v=50"></script>
+  <script src="assets/js/ballot.js"></script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

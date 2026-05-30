@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SmartCampus Election | Schedule</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/modern-design.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+
+<body data-page="schedule">
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="positions.html" class="nav-link">Positions</a></li>
+        <li><a href="candidates.html" class="nav-link">Candidates</a></li>
+        <li><a href="schedule.html" class="nav-link active">Schedule</a></li>
+        <li><a href="notices.html" class="nav-link">Notices</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline btn-modern">Login</a></li>
+        <!-- Auth items injected by renderPublicNavAuth() in api.js -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Premium Hero -->
+    <section class="schedule-hero">
+      <div class="container schedule-hero-grid">
+        <div class="schedule-hero-content">
+          <div class="schedule-badge-row">
+            <span class="badge badge-success">Official Timeline</span>
+            <span class="badge badge-gold">Voting Period</span>
+            <span class="badge badge-danger">Result Publication</span>
+          </div>
+
+          <h1>Election Schedule</h1>
+
+          <p>
+            Follow every important election milestone from announcement to results.
+            Stay informed, meet deadlines, and participate at the right time.
+          </p>
+
+          <div class="hero-actions">
+            <a href="candidates.html" class="btn btn-primary">View Candidates</a>
+            <a href="register.html" class="btn btn-secondary">Register Now</a>
+            <a href="ballot.html" class="btn btn-outline">Cast Vote</a>
+          </div>
+        </div>
+
+        <aside class="card schedule-hero-card">
+          <span class="schedule-hero-icon">📅</span>
+          <h2>Never miss an election deadline</h2>
+          <p>
+            The schedule helps students, candidates, and admins track the complete election journey
+            from notice publication to final result announcement.
+          </p>
+
+          <div class="schedule-hero-mini-grid">
+            <div>
+              <strong>8</strong>
+              <span>Timeline Steps</span>
+            </div>
+
+            <div>
+              <strong>1</strong>
+              <span>Voting Window</span>
+            </div>
+
+            <div>
+              <strong>Final</strong>
+              <span>Result Day</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Schedule Overview -->
+    <section class="section schedule-overview-section">
+      <div class="container schedule-overview-grid">
+        <div class="schedule-overview-text">
+          <p class="section-kicker">Official Timeline</p>
+          <h2>Plan your participation before the deadline</h2>
+
+          <p>
+            The election schedule gives students a clear roadmap of when nominations open,
+            when candidates campaign, when voting begins, and when results are published.
+          </p>
+
+          <p>
+            Whether you are a voter or a candidate, following the timeline helps you avoid
+            missed deadlines and participate with confidence.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#fullScheduleTimeline" class="btn btn-primary">View Full Timeline</a>
+            <a href="notices.html" class="btn btn-outline">Read Notices</a>
+          </div>
+        </div>
+
+        <aside class="card schedule-stat-card">
+          <span class="badge badge-gold">Schedule Summary</span>
+
+          <div class="schedule-stat-list">
+            <div class="schedule-stat-item">
+              <strong>6+</strong>
+              <span>Election Phases</span>
+            </div>
+
+            <div class="schedule-stat-item">
+              <strong>5</strong>
+              <span>Key Deadlines</span>
+            </div>
+
+            <div class="schedule-stat-item">
+              <strong>1</strong>
+              <span>Voting Window</span>
+            </div>
+
+            <div class="schedule-stat-item">
+              <strong>Final</strong>
+              <span>Result Publication</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section class="section light-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Key Dates</p>
+          <h2>Important Election Highlights</h2>
+          <p>
+            These are the dates every student should remember during the election process.
+          </p>
+        </div>
+
+        <div class="schedule-highlight-grid">
+          <article class="card schedule-highlight-card">
+            <span class="schedule-highlight-icon">📝</span>
+            <span class="badge badge-success">Nomination</span>
+            <h3>Nomination Opens</h3>
+            <p class="schedule-date-text">2026-04-02</p>
+            <p>Interested candidates can begin submitting their nomination forms.</p>
+          </article>
+
+          <article class="card schedule-highlight-card">
+            <span class="schedule-highlight-icon">📣</span>
+            <span class="badge badge-gold">Campaign</span>
+            <h3>Campaign Period</h3>
+            <p class="schedule-date-text">2026-04-07 to 2026-04-10</p>
+            <p>Candidates share manifestos, goals, and campaign messages with students.</p>
+          </article>
+
+          <article class="card schedule-highlight-card">
+            <span class="schedule-highlight-icon">🗳️</span>
+            <span class="badge badge-danger">Voting</span>
+            <h3>Voting Day</h3>
+            <p class="schedule-date-text">2026-04-12</p>
+            <p>Students cast their vote using the guided ballot and review flow.</p>
+          </article>
+
+          <article class="card schedule-highlight-card">
+            <span class="schedule-highlight-icon">🏆</span>
+            <span class="badge badge-gold">Final</span>
+            <h3>Results Published</h3>
+            <p class="schedule-date-text">2026-04-13</p>
+            <p>Official results are published after verification and approval.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Timeline -->
+    <section class="section schedule-timeline-section" id="fullScheduleTimeline">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Election Roadmap</p>
+          <h2>Full Election Timeline</h2>
+          <p>
+            Follow the full election journey step by step.
+          </p>
+        </div>
+
+        <div class="schedule-timeline">
+          <article class="schedule-timeline-item">
+            <span class="schedule-timeline-number">01</span>
+
+            <div class="schedule-timeline-content">
+              <div class="schedule-event-top">
+                <span class="schedule-event-icon">📢</span>
+                <span class="schedule-event-badge badge-success">Announcement</span>
+              </div>
+
+              <p class="schedule-timeline-date">2026-04-01</p>
+              <h3>Election Notice Published</h3>
+              <p>The official election announcement is released to all students.</p>
+            </div>
+          </article>
+
+          <article class="schedule-timeline-item">
+            <span class="schedule-timeline-number">02</span>
+
+            <div class="schedule-timeline-content">
+              <div class="schedule-event-top">
+                <span class="schedule-event-icon">📝</span>
+                <span class="schedule-event-badge badge-gold">Nomination</span>
+              </div>
+
+              <p class="schedule-timeline-date">2026-04-02</p>
+              <h3>Nomination Submission Opens</h3>
+              <p>Interested candidates begin submitting nomination forms.</p>
+            </div>
+          </article>
+
+          <article class="schedule-timeline-item urgent">
+            <span class="schedule-timeline-number">03</span>
+
+            <div class="schedule-timeline-content">
+              <div class="schedule-event-top">
+                <span class="schedule-event-icon">⏰</span>
+                <span class="schedule-event-badge badge-danger">Deadline</span>
+              </div>
+
+              <p class="schedule-timeline-date">2026-04-05</p>
+              <h3>Nomination Submission Closes</h3>
+              <p>Final deadline for all candidate submissions and supporting documents.</p>
+            </div>
+          </article>
+
+          <article class="schedule-timeline-item">
+            <span class="schedule-timeline-number">04</span>
+
+            <div class="schedule-timeline-content">
+              <div class="schedule-event-top">
+                <span class="schedule-event-icon">✅</span>
+                <span class="schedule-event-badge badge-success">Verification</span>
+              </div>
+
+              <p class="schedule-timeline-date">2026-04-06</p>
+              <h3>Candidate Verification</h3>
+              <p>The election committee reviews and verifies candidate submissions.</p>
+            </div>
+          </article>
+
+          <article class="schedule-timeline-item">
+            <span class="schedule-timeline-number">05</span>
+
+            <div class="schedule-timeline-content">
+              <div class="schedule-event-top">
+                <span class="schedule-event-icon">📋</span>
+                <span class="schedule-event-badge badge-gold">Candidate List</span>
+              </div>
+
+              <p class="schedule-timeline-date">2026-04-07</p>
+              <h3>Final Candidate List Published</h3>
+              <p>The verified candidate list becomes available for students to explore.</p>
+            </div>
+          </article>
+
+          <article class="schedule-timeline-item">
+            <span class="schedule-timeline-number">06</span>
+
+            <div class="schedule-timeline-content">
+              <div class="schedule-event-top">
+                <span class="schedule-event-icon">📣</span>
+                <span class="schedule-event-badge badge-gold">Campaign</span>
+              </div>
+
+              <p class="schedule-timeline-date">2026-04-07 to 2026-04-10</p>
+              <h3>Campaign Period</h3>
+              <p>Candidates share their manifesto, goals, and campaign messages with voters.</p>
+            </div>
+          </article>
+
+          <article class="schedule-timeline-item urgent">
+            <span class="schedule-timeline-number">07</span>
+
+            <div class="schedule-timeline-content">
+              <div class="schedule-event-top">
+                <span class="schedule-event-icon">🗳️</span>
+                <span class="schedule-event-badge badge-danger">Voting</span>
+              </div>
+
+              <p class="schedule-timeline-date">2026-04-12</p>
+              <h3>Voting Period</h3>
+              <p>Students cast their votes through the guided ballot, review, and submit process.</p>
+            </div>
+          </article>
+
+          <article class="schedule-timeline-item final">
+            <span class="schedule-timeline-number">08</span>
+
+            <div class="schedule-timeline-content">
+              <div class="schedule-event-top">
+                <span class="schedule-event-icon">🏆</span>
+                <span class="schedule-event-badge badge-gold">Final Result</span>
+              </div>
+
+              <p class="schedule-timeline-date">2026-04-13</p>
+              <h3>Result Publication</h3>
+              <p>Official results are published after review and approval by the election authority.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Reminder -->
+    <section class="section schedule-reminder-section">
+      <div class="container schedule-reminder-grid">
+        <div>
+          <p class="section-kicker">Student Reminder</p>
+          <h2>Small reminders that can save your election day</h2>
+          <p>
+            Keep track of the schedule so you do not miss nomination deadlines, campaign updates,
+            voting time, or result publication.
+          </p>
+        </div>
+
+        <div class="schedule-reminder-cards">
+          <article class="schedule-reminder-card">
+            <span>✅</span>
+            <p>Register before voting.</p>
+          </article>
+
+          <article class="schedule-reminder-card">
+            <span>👥</span>
+            <p>Review candidates before election day.</p>
+          </article>
+
+          <article class="schedule-reminder-card">
+            <span>📝</span>
+            <p>Submit nomination before the deadline.</p>
+          </article>
+
+          <article class="schedule-reminder-card">
+            <span>🗳️</span>
+            <p>Vote during the official voting window.</p>
+          </article>
+
+          <article class="schedule-reminder-card">
+            <span>📢</span>
+            <p>Follow official notices for updates.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Schedule Matters -->
+    <section class="section light-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Why Schedule Matters</p>
+          <h2>A clear timeline keeps the election fair and organized</h2>
+          <p>
+            Students avoid missing deadlines, candidates prepare campaigns on time,
+            voters know when to cast their vote, and results are published in a structured way.
+          </p>
+        </div>
+
+        <div class="schedule-matter-grid">
+          <article class="card schedule-matter-card">
+            <span class="schedule-matter-icon">⏳</span>
+            <h3>Deadline Awareness</h3>
+            <p>Students and candidates know exactly when each important action must be completed.</p>
+          </article>
+
+          <article class="card schedule-matter-card">
+            <span class="schedule-matter-icon">📣</span>
+            <h3>Campaign Preparation</h3>
+            <p>Candidates get a clear period to share manifesto, goals, and campaign messages.</p>
+          </article>
+
+          <article class="card schedule-matter-card">
+            <span class="schedule-matter-icon">🗳️</span>
+            <h3>Voting Readiness</h3>
+            <p>Voters can explore candidates early and cast their vote during the proper window.</p>
+          </article>
+
+          <article class="card schedule-matter-card">
+            <span class="schedule-matter-icon">🏆</span>
+            <h3>Structured Results</h3>
+            <p>Results are published after review, helping the process feel official and trustworthy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section schedule-final-cta">
+      <div class="container schedule-final-cta-box">
+        <div>
+          <p class="section-kicker">Do Not Miss It</p>
+          <h2>Don’t miss your chance to participate.</h2>
+          <p>
+            Register, explore candidates, and be ready to cast your vote during the official voting period.
+          </p>
+        </div>
+
+        <div class="cta-actions">
+          <a href="register.html" class="btn btn-primary">Register Now</a>
+          <a href="candidates.html" class="btn btn-secondary">View Candidates</a>
+          <a href="ballot.html" class="btn btn-outline">Open Ballot</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer upgraded-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>
+          A student-centered digital election platform for transparent, organized,
+          and accessible campus leadership selection.
+        </p>
+      </div>
+
+      <div>
+        <h4>Election Links</h4>
+        <ul class="footer-links">
+          <li><a href="positions.html">Positions</a></li>
+          <li><a href="candidates.html">Candidates</a></li>
+          <li><a href="notices.html">Notices</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Access</h4>
+        <ul class="footer-links">
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

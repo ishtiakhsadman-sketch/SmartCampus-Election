@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SmartCampus Election | Notices</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/modern-design.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+
+<body data-page="notices">
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="positions.html" class="nav-link">Positions</a></li>
+        <li><a href="candidates.html" class="nav-link">Candidates</a></li>
+        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li><a href="notices.html" class="nav-link active">Notices</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline btn-modern">Login</a></li>
+        <!-- Auth items injected dynamically by renderPublicNavAuth() in api.js -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Premium Notices Hero -->
+    <section class="notices-hero">
+      <div class="container notices-hero-grid">
+        <div class="notices-hero-content">
+          <div class="notices-badge-row">
+            <span class="badge badge-success">Official Updates</span>
+            <span class="badge badge-danger">Deadlines</span>
+            <span class="badge badge-gold">Election Office</span>
+          </div>
+
+          <h1>Official Election Notices</h1>
+
+          <p>
+            Stay updated with election announcements, nomination deadlines, verification updates,
+            voting instructions, policies, and result publication notices.
+          </p>
+
+          <div class="hero-actions">
+            <a href="schedule.html" class="btn btn-primary">View Schedule</a>
+            <a href="candidates.html" class="btn btn-secondary">View Candidates</a>
+            <a href="register.html" class="btn btn-outline">Register Now</a>
+          </div>
+        </div>
+
+        <aside class="card notices-hero-card">
+          <span class="notices-hero-icon">📢</span>
+          <h2>Your election update center</h2>
+          <p>
+            Use this page to track urgent deadlines, candidate verification updates,
+            voting reminders, and official announcements from the election office.
+          </p>
+
+          <div class="notices-hero-mini-grid">
+            <div>
+              <strong>5+</strong>
+              <span>Categories</span>
+            </div>
+
+            <div>
+              <strong>24/7</strong>
+              <span>Access</span>
+            </div>
+
+            <div>
+              <strong>Official</strong>
+              <span>Updates</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- Notice Categories -->
+    <section class="section light-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Notice Categories</p>
+          <h2>Find the update you need faster</h2>
+          <p>
+            Notices are grouped by election activity so students can quickly understand what needs attention.
+          </p>
+        </div>
+
+        <div class="notice-category-grid">
+          <article class="card notice-category-card">
+            <span class="notice-category-icon">⏰</span>
+            <h3>Deadline</h3>
+            <p>Important submission and election deadline updates.</p>
+          </article>
+
+          <article class="card notice-category-card">
+            <span class="notice-category-icon">✅</span>
+            <h3>Verification</h3>
+            <p>Candidate eligibility, document review, and approval notices.</p>
+          </article>
+
+          <article class="card notice-category-card">
+            <span class="notice-category-icon">🗳️</span>
+            <h3>Voting</h3>
+            <p>Voting day, ballot access, and vote submission instructions.</p>
+          </article>
+
+          <article class="card notice-category-card">
+            <span class="notice-category-icon">🏆</span>
+            <h3>Results</h3>
+            <p>Result publication and winner announcement updates.</p>
+          </article>
+
+          <article class="card notice-category-card">
+            <span class="notice-category-icon">📌</span>
+            <h3>General</h3>
+            <p>General election office announcements and information.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notice Directory -->
+    <section class="section notices-directory-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Announcement Hub</p>
+          <h2>Browse All Official Notices</h2>
+          <p>
+            Search, filter, and sort notices to stay informed before you vote.
+          </p>
+        </div>
+
+        <div class="card notices-filter-panel">
+          <div class="form-group">
+            <label for="noticeSearchInput">Search Notices</label>
+            <input
+              type="text"
+              id="noticeSearchInput"
+              placeholder="Search by title, category, or notice content"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="noticeCategoryFilter">Filter by Category</label>
+            <select id="noticeCategoryFilter">
+              <option value="all">All Categories</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="noticeSort">Sort Notices</label>
+            <select id="noticeSort">
+              <option value="latest">Latest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="category">Category A-Z</option>
+            </select>
+          </div>
+
+          <div class="form-group notices-filter-action">
+            <label>&nbsp;</label>
+            <button type="button" class="btn btn-outline" id="clearNoticeFilters">
+              Clear Filters
+            </button>
+          </div>
+        </div>
+
+        <div class="notices-result-row">
+          <div>
+            <h3>Notice Board</h3>
+            <p id="noticeResultCount" class="muted">Showing official notices</p>
+          </div>
+
+          <span class="badge badge-gold">Read More Available</span>
+        </div>
+
+        <div id="noticesList" class="notices-grid-premium">
+          <!-- Notice cards inserted by notices.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer upgraded-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>
+          A student-centered digital election platform for transparent, organized,
+          and accessible campus leadership selection.
+        </p>
+      </div>
+
+      <div>
+        <h4>Election Links</h4>
+        <ul class="footer-links">
+          <li><a href="positions.html">Positions</a></li>
+          <li><a href="candidates.html">Candidates</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Office</a></li>
+          <li><a href="login.html">Portal Access</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <!-- NOTE: mock-data.js intentionally NOT loaded here — notices page uses only live MongoDB data -->
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/notices.js"></script>
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

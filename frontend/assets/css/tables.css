@@ -1,0 +1,315 @@
+/* =========================================================
+   SmartCampus Election - Tables Styles
+   Upgraded admin tables, status badges, actions, responsive
+========================================================= */
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-soft);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  min-width: 760px;
+}
+
+.data-table thead {
+  background:
+    linear-gradient(135deg, var(--primary-green-dark), var(--primary-green), var(--secondary-red));
+  color: var(--white);
+}
+
+.data-table thead th {
+  padding: 15px 16px;
+  text-align: left;
+  font-size: 0.94rem;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.data-table tbody tr {
+  transition: var(--transition-fast);
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.data-table tbody tr:hover {
+  background: var(--primary-green-soft);
+}
+
+.data-table td {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-color);
+  vertical-align: middle;
+  color: #263244;
+}
+
+/* Specific wrapping rule for Desired Position column */
+.data-table td:nth-child(4) {
+  max-width: 210px;
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.45;
+}
+
+.table-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.table-btn {
+  padding: 0 14px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  font-size: 0.83rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xs);
+}
+
+.table-btn.view {
+  background: transparent;
+  color: var(--primary-green);
+  border: 1.5px solid var(--primary-green);
+}
+
+.table-btn.view:hover {
+  background: var(--primary-green-soft);
+  color: var(--primary-green-dark);
+}
+
+.table-btn.approve {
+  background: var(--primary-green);
+  color: var(--white);
+}
+
+.table-btn.reject {
+  background: var(--secondary-red);
+  color: var(--white);
+}
+
+.table-btn.edit {
+  background: var(--accent-gold-soft);
+  color: var(--accent-gold-dark);
+}
+
+.table-btn.delete {
+  background: var(--secondary-red-soft);
+  color: var(--secondary-red-dark);
+}
+
+.table-btn.publish {
+  background: var(--primary-green-soft);
+  color: var(--primary-green-dark);
+}
+
+.table-btn.unpublish {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 11px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.status-approved,
+.status-verified,
+.status-success,
+.status-published,
+.status-active,
+.status-voted {
+  background: var(--primary-green-soft);
+  color: var(--primary-green-dark);
+}
+
+.status-pending,
+.status-draft {
+  background: var(--accent-gold-soft);
+  color: var(--accent-gold-dark);
+}
+
+.status-rejected,
+.status-unverified,
+.status-failed,
+.status-unpublished,
+.status-not-voted {
+  background: var(--secondary-red-soft);
+  color: var(--secondary-red-dark);
+}
+
+/* Table text helpers */
+.data-table strong {
+  color: var(--primary-green-dark);
+}
+
+/* Smooth horizontal scroll on small screens */
+.table-responsive::-webkit-scrollbar {
+  height: 9px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: var(--radius-pill);
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: rgba(20, 107, 58, 0.55);
+  border-radius: var(--radius-pill);
+}
+
+/* =========================================================
+   Admin Table UI Upgrade
+   Add this at the bottom of tables.css
+========================================================= */
+
+/* Admin Table Container */
+body[data-page^="admin"] .table-responsive,
+body[data-page="election-setup"] .table-responsive {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  background: var(--white);
+}
+
+/* Table Header */
+body[data-page^="admin"] .data-table thead {
+  background:
+    linear-gradient(135deg, var(--primary-green-dark), var(--primary-green), var(--secondary-red));
+}
+
+body[data-page^="admin"] .data-table thead th {
+  font-weight: 950;
+  letter-spacing: 0.02em;
+}
+
+/* Table Body */
+body[data-page^="admin"] .data-table td {
+  font-size: 0.94rem;
+}
+
+body[data-page^="admin"] .data-table tbody tr:hover {
+  background: rgba(20, 107, 58, 0.075);
+}
+
+/* Better Action Buttons */
+body[data-page^="admin"] .table-btn {
+  border-radius: var(--radius-pill);
+  font-weight: 950;
+  letter-spacing: 0.01em;
+}
+
+body[data-page^="admin"] .table-btn.view {
+  background: transparent;
+  color: var(--primary-green);
+  border: 1.5px solid var(--primary-green);
+}
+
+body[data-page^="admin"] .table-btn.view:hover {
+  background: var(--primary-green-soft);
+  color: var(--primary-green-dark);
+}
+
+body[data-page^="admin"] .table-btn.approve {
+  background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
+  color: var(--white);
+}
+
+body[data-page^="admin"] .table-btn.reject,
+body[data-page^="admin"] .table-btn.delete {
+  background: linear-gradient(135deg, var(--secondary-red), var(--secondary-red-dark));
+  color: var(--white);
+}
+
+body[data-page^="admin"] .table-btn.edit {
+  background: var(--accent-gold-soft);
+  color: var(--accent-gold-dark);
+  border: 1px solid rgba(212, 175, 55, 0.34);
+}
+
+body[data-page^="admin"] .table-btn.publish {
+  background: var(--primary-green-soft);
+  color: var(--primary-green-dark);
+  border: 1px solid rgba(20, 107, 58, 0.18);
+}
+
+body[data-page^="admin"] .table-btn.unpublish {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+/* Status Badge Upgrade */
+body[data-page^="admin"] .status-badge {
+  min-width: 86px;
+  text-align: center;
+}
+
+body[data-page^="admin"] .status-approved,
+body[data-page^="admin"] .status-verified,
+body[data-page^="admin"] .status-success,
+body[data-page^="admin"] .status-published,
+body[data-page^="admin"] .status-active,
+body[data-page^="admin"] .status-voted {
+  background: var(--primary-green-soft);
+  color: var(--primary-green-dark);
+  border: 1px solid rgba(20, 107, 58, 0.16);
+}
+
+body[data-page^="admin"] .status-pending,
+body[data-page^="admin"] .status-draft {
+  background: var(--accent-gold-soft);
+  color: var(--accent-gold-dark);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+body[data-page^="admin"] .status-rejected,
+body[data-page^="admin"] .status-unverified,
+body[data-page^="admin"] .status-failed,
+body[data-page^="admin"] .status-unpublished,
+body[data-page^="admin"] .status-not-voted {
+  background: var(--secondary-red-soft);
+  color: var(--secondary-red-dark);
+  border: 1px solid rgba(198, 40, 40, 0.16);
+}
+
+/* Compact Action Layout on Smaller Screens */
+@media (max-width: 768px) {
+  body[data-page^="admin"] .table-actions {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  body[data-page^="admin"] .table-btn {
+    width: auto;
+    padding: 0 10px;
+    height: 28px;
+    font-size: 0.78rem;
+  }
+}

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCampus Election | Candidate Manage Profile</title>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+<body data-page="candidate-manage-profile">
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+     <ul class="nav-menu candidate-top-nav" id="navMenu" data-candidate-top-nav>
+        <li><a href="candidate-dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="nomination.html" class="nav-link">Nomination</a></li>
+        <li><a href="candidate-manage-profile.html" class="nav-link">Manage Profile</a></li>
+        <li><a href="candidate-campaign.html" class="nav-link">Campaign</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+
+    </header>
+
+  <section class="page-banner">
+      <div class="container">
+        <h1>Manage Candidate Profile</h1>
+        <p>Edit candidate-facing content that appears in your public campaign preview.</p>
+      </div>
+    </section>
+
+  <main class="dashboard-page section">
+    <div class="container dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar card">
+        <h3>Candidate Panel</h3>
+        <ul class="dashboard-nav">
+          <li><a href="candidate-dashboard.html" class="dashboard-link">Dashboard Home</a></li>
+          <li><a href="nomination.html" class="dashboard-link">Nomination Form</a></li>
+          <li><a href="candidate-manage-profile.html" class="dashboard-link active">Manage Profile</a></li>
+          <li><a href="candidate-campaign.html" class="dashboard-link">Campaign Preview</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main -->
+      <section class="dashboard-main">
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <span class="badge badge-success">Editable Profile</span>
+              <h2>Candidate Profile Settings</h2>
+              <p class="muted">Update public biography, manifesto, slogan, and communication placeholders.</p>
+            </div>
+          </div>
+
+          <form id="candidateProfileForm">
+            <div class="form-group">
+              <label for="candidateBio">Edit Bio</label>
+              <textarea id="candidateBio" rows="4" placeholder="Write or update your candidate biography"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="candidateManifesto">Edit Manifesto</label>
+              <textarea id="candidateManifesto" rows="5" placeholder="Write or update your manifesto"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="candidateSlogan">Edit Slogan</label>
+              <input type="text" id="candidateSlogan" placeholder="Enter campaign slogan" />
+            </div>
+
+            <div class="form-grid two-col">
+              <!-- Profile Photo Upload -->
+              <div class="form-group card card-accent" style="padding: 1.5rem; text-align: center;">
+                <label for="candidateProfilePhoto">Profile Photo</label>
+                <div id="profilePhotoPreview" class="avatar avatar-lg" style="margin: 0 auto 1rem;">
+                  <img src="https://ui-avatars.com/api/?name=Candidate&background=146b3a&color=fff&size=150" alt="Preview" id="profileImg" onerror="this.src='https://ui-avatars.com/api/?name=Candidate&background=146b3a&color=fff&size=150'" />
+                </div>
+                <input type="file" id="candidateProfilePhoto" accept="image/jpeg, image/png, image/webp" />
+                <button type="button" id="uploadProfileBtn" class="btn btn-sm btn-outline mt-4">Upload Profile Photo</button>
+              </div>
+
+              <!-- Gallery Photos Upload -->
+              <div class="form-group card card-premium" style="padding: 1.5rem;">
+                <label for="candidateGalleryPhotos">Add to Gallery (Max 5MB each)</label>
+                <input type="file" id="candidateGalleryPhotos" accept="image/jpeg, image/png, image/webp" multiple />
+                <button type="button" id="uploadGalleryBtn" class="btn btn-sm btn-outline mt-4">Upload Gallery Photos</button>
+                <p class="muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Select multiple photos to upload.</p>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 2rem;">
+              <h3 style="margin-bottom: 1rem;">Current Gallery</h3>
+              <div id="galleryPreviewContainer" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem;">
+                <!-- Gallery items will be populated here -->
+                <p class="muted">Loading gallery...</p>
+              </div>
+            </div>
+
+            <div class="form-group mt-4">
+              <label for="candidateContactPlaceholder">Contact / Social Link</label>
+              <input type="text" id="candidateContactPlaceholder" placeholder="Email or social link" />
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="saveProfileBtn">Save Changes</button>
+          </form>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>A sample frontend-only student election website for academic use.</p>
+      </div>
+      <div>
+        <h4>Candidate Tools</h4>
+        <ul class="footer-links">
+          <li><a href="candidate-dashboard.html">Dashboard</a></li>
+          <li><a href="nomination.html">Nomination</a></li>
+          <li><a href="candidate-campaign.html">Campaign</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Election</h4>
+        <ul class="footer-links">
+          <li><a href="candidates.html">Candidate Directory</a></li>
+          <li><a href="notices.html">Notices</a></li>
+          <li><a href="results.html">Results</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/candidate-navigation.js?v=1"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      if (!requireLogin(["candidate"])) return;
+
+      const profileForm = document.getElementById("candidateProfileForm");
+      
+      // Load current profile data
+      try {
+        const response = await apiRequest("/candidate/profile");
+        if (response.success && response.candidate) {
+          const candidate = response.candidate;
+          document.getElementById("candidateBio").value = candidate.shortBio || "";
+          document.getElementById("candidateManifesto").value = candidate.manifesto || "";
+          document.getElementById("candidateSlogan").value = candidate.slogan || "";
+          document.getElementById("candidateContactPlaceholder").value = candidate.contactPlaceholder || "";
+
+          // Render Profile Photo
+          if (candidate.avatarUrl) {
+            let aUrl = candidate.avatarUrl;
+            if (!aUrl.startsWith('http')) {
+               const baseUrl = API_BASE_URL.replace('/api', '');
+               aUrl = aUrl.startsWith('/') ? `${baseUrl}${aUrl}` : `${baseUrl}/${aUrl}`;
+            }
+            document.getElementById("profileImg").src = aUrl;
+          }
+
+          // Render Gallery
+          renderGallery(candidate.galleryPhotos || []);
+        }
+      } catch (err) {
+        console.error("Failed to load profile", err);
+      }
+
+      function renderGallery(photos) {
+        const container = document.getElementById("galleryPreviewContainer");
+        if (!photos.length) {
+          container.innerHTML = `<p class="muted">No gallery photos uploaded.</p>`;
+          return;
+        }
+
+        const baseUrl = API_BASE_URL.replace('/api', '');
+
+        container.innerHTML = photos.map(photo => {
+          let pUrl = photo.url;
+          if (!pUrl.startsWith('http')) {
+             pUrl = pUrl.startsWith('/') ? `${baseUrl}${pUrl}` : `${baseUrl}/${pUrl}`;
+          }
+
+          return `
+            <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.10); background: #fff; display: flex; flex-direction: column;">
+              <div style="width: 100%; height: 200px; overflow: hidden;">
+                <img src="${pUrl}" alt="Gallery Photo"
+                  style="width: 100%; height: 100%; object-fit: cover; display: block;"
+                  onerror="this.style.display='none'" />
+              </div>
+              <div style="padding: 0.6rem; text-align: center;">
+                <button type="button" class="btn btn-sm btn-outline delete-photo-btn"
+                  data-id="${photo._id}"
+                  style="color: var(--secondary-red); border-color: var(--secondary-red); width: 100%; font-size: 0.8rem;">Delete</button>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        // Attach delete events
+        document.querySelectorAll(".delete-photo-btn").forEach(btn => {
+          btn.addEventListener("click", async (e) => {
+            const photoId = e.target.getAttribute("data-id");
+            if (confirm("Are you sure you want to delete this photo?")) {
+              e.target.textContent = "Deleting...";
+              e.target.disabled = true;
+              try {
+                await deleteCandidateGalleryPhoto(photoId);
+                // Reload profile to refresh gallery
+                window.location.reload();
+              } catch (err) {
+                alert("Failed to delete photo: " + err.message);
+                e.target.textContent = "Delete";
+                e.target.disabled = false;
+              }
+            }
+          });
+        });
+      }
+
+      // Handle Text Form Submit
+      profileForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        
+        const saveBtn = document.getElementById("saveProfileBtn");
+        saveBtn.disabled = true;
+        saveBtn.textContent = "Saving...";
+
+        const profileData = {
+          bio: document.getElementById("candidateBio").value.trim(),
+          manifesto: document.getElementById("candidateManifesto").value.trim(),
+          slogan: document.getElementById("candidateSlogan").value.trim(),
+          contactPlaceholder: document.getElementById("candidateContactPlaceholder").value.trim()
+        };
+
+        try {
+          await apiRequest("/candidate/profile", {
+            method: "PUT",
+            body: profileData
+          });
+          
+          if (typeof openModal === "function") {
+            openModal("Profile Updated", "Your candidate profile text changes have been saved successfully.");
+          } else {
+            alert("Profile text updated successfully.");
+          }
+        } catch (err) {
+          alert("Error saving profile: " + err.message);
+        } finally {
+          saveBtn.disabled = false;
+          saveBtn.textContent = "Save Changes";
+        }
+      });
+
+      // Handle Profile Photo Upload
+      document.getElementById("uploadProfileBtn").addEventListener("click", async function() {
+        const fileInput = document.getElementById("candidateProfilePhoto");
+        if (!fileInput.files.length) {
+          return alert("Please select a profile photo first.");
+        }
+        
+        const btn = this;
+        btn.disabled = true;
+        btn.textContent = "Uploading...";
+        
+        try {
+          await uploadCandidateProfilePhoto(fileInput.files[0]);
+          alert("Profile photo updated successfully!");
+          window.location.reload();
+        } catch (err) {
+          alert("Failed to upload profile photo: " + err.message);
+        } finally {
+          btn.disabled = false;
+          btn.textContent = "Upload Profile Photo";
+        }
+      });
+
+      // Handle Gallery Photos Upload
+      document.getElementById("uploadGalleryBtn").addEventListener("click", async function() {
+        const fileInput = document.getElementById("candidateGalleryPhotos");
+        if (!fileInput.files.length) {
+          return alert("Please select at least one gallery photo.");
+        }
+
+        const btn = this;
+        btn.disabled = true;
+        btn.textContent = "Uploading...";
+        
+        try {
+          await uploadCandidateGalleryPhotos(fileInput.files);
+          alert("Gallery photos uploaded successfully!");
+          window.location.reload();
+        } catch (err) {
+          alert("Failed to upload gallery photos: " + err.message);
+        } finally {
+          btn.disabled = false;
+          btn.textContent = "Upload Gallery Photos";
+        }
+      });
+    });
+  </script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

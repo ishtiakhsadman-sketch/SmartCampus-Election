@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SmartCampus Election | Contact Messages</title>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/tables.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+
+<body data-page="admin-contact-messages">
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+      <ul class="nav-menu admin-top-nav" id="navMenu" data-admin-top-nav>
+        <li><a href="admin-dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="election-setup.html" class="nav-link">Election Setup</a></li>
+        <li><a href="admin-results.html" class="nav-link">Results</a></li>
+        <li><a href="admin-contact-messages.html" class="nav-link active">Messages</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+
+    </header>
+
+  <section class="page-banner">
+      <div class="container">
+        <h1>Contact Messages</h1>
+        <p>View student questions, manage support requests, and reply directly from the admin panel.</p>
+      </div>
+    </section>
+
+  <main class="dashboard-page section">
+    <div class="container dashboard-layout">
+      <aside class="dashboard-sidebar card">
+        <h3>Admin Panel</h3>
+
+        <ul class="dashboard-nav" id="adminSidebarNav" data-admin-sidebar-nav>
+          <li><a href="admin-dashboard.html" class="dashboard-link">Dashboard Home</a></li>
+          <li><a href="election-setup.html" class="dashboard-link">Election Setup</a></li>
+          <li><a href="admin-positions.html" class="dashboard-link">Positions</a></li>
+          <li><a href="admin-candidates.html" class="dashboard-link">Candidates</a></li>
+          <li><a href="admin-voters.html" class="dashboard-link">Voters</a></li>
+          <li><a href="admin-ballot.html" class="dashboard-link">Ballot Config</a></li>
+          <li><a href="admin-notices.html" class="dashboard-link">Notices</a></li>
+          <li><a href="admin-results.html" class="dashboard-link">Results</a></li>
+          <li><a href="admin-contact-messages.html" class="dashboard-link active">Contact Messages</a></li>
+          <li><a href="admin-audit-log.html" class="dashboard-link">Audit Log</a></li>
+        </ul>
+      </aside>
+
+      <section class="dashboard-main">
+        <article class="card dashboard-panel welcome-panel">
+          <div class="panel-head">
+            <div>
+              <span class="badge badge-gold">Admin Helpdesk</span>
+              <h2>Election Office Inbox</h2>
+              <p class="muted">
+                Read contact form submissions and send official replies to users by email.
+              </p>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="refreshMessagesBtn">
+              Refresh Messages
+            </button>
+          </div>
+        </article>
+
+        <div class="stats-grid four-stats">
+          <article class="stat-card contact-stat-card">
+            <h3>Total Messages</h3>
+            <p id="statTotalMessages">0</p>
+          </article>
+
+          <article class="stat-card contact-stat-card">
+            <h3>New Messages</h3>
+            <p id="statNewMessages">0</p>
+          </article>
+
+          <article class="stat-card contact-stat-card">
+            <h3>Replied Messages</h3>
+            <p id="statRepliedMessages">0</p>
+          </article>
+
+          <article class="stat-card contact-stat-card">
+            <h3>Closed Messages</h3>
+            <p id="statClosedMessages">0</p>
+          </article>
+        </div>
+
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Filter Messages</h2>
+              <p class="muted">Search by sender, email, subject, or message content.</p>
+            </div>
+          </div>
+
+          <div class="admin-contact-filter-grid">
+            <div class="form-group">
+              <label for="messageSearchInput">Search</label>
+              <input
+                type="text"
+                id="messageSearchInput"
+                placeholder="Search name, email, subject, or message"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="messageStatusFilter">Status</label>
+              <select id="messageStatusFilter">
+                <option value="all">All</option>
+                <option value="New">New</option>
+                <option value="Read">Read</option>
+                <option value="Replied">Replied</option>
+                <option value="Closed">Closed</option>
+              </select>
+            </div>
+
+            <div class="form-group admin-contact-filter-action">
+              <label>&nbsp;</label>
+              <button type="button" class="btn btn-outline" id="clearMessageFiltersBtn">
+                Clear Filters
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Message List</h2>
+              <p class="muted" id="messageResultCount">Loading messages...</p>
+            </div>
+          </div>
+
+          <div id="adminContactMessagesList" class="admin-contact-message-list">
+            <!-- Rendered by admin-contact-messages.js -->
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Reply Modal -->
+  <div class="modal" id="replyMessageModal">
+    <div class="modal-content admin-reply-modal">
+      <button class="modal-close" id="replyModalClose" type="button">&times;</button>
+
+      <div id="replyModalBody">
+        <span class="badge badge-gold">Reply Panel</span>
+        <h2 id="replyModalSubject">Message Subject</h2>
+
+        <div class="admin-reply-meta">
+          <p><strong>Sender:</strong> <span id="replySenderName">-</span></p>
+          <p><strong>Email:</strong> <span id="replySenderEmail">-</span></p>
+          <p><strong>Date:</strong> <span id="replySubmittedDate">-</span></p>
+          <p><strong>Status:</strong> <span id="replyMessageStatus" class="badge badge-success">-</span></p>
+        </div>
+
+        <div class="admin-original-message-box">
+          <h3>Original Message</h3>
+          <p id="replyOriginalMessage">-</p>
+        </div>
+
+        <form id="replyMessageForm">
+          <input type="hidden" id="replyMessageId" />
+
+          <div class="form-group">
+            <label for="adminReplyText">Admin Reply</label>
+            <textarea
+              id="adminReplyText"
+              rows="6"
+              placeholder="Write your official reply here..."
+              required></textarea>
+          </div>
+
+          <div class="hero-actions">
+            <button type="submit" class="btn btn-primary" id="sendReplyBtn">
+              Send Reply
+            </button>
+
+            <button type="button" class="btn btn-outline" id="markClosedBtn">
+              Mark Closed
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>Admin helpdesk for contact form messages and election office replies.</p>
+      </div>
+
+      <div>
+        <h4>Admin Tools</h4>
+        <ul class="footer-links">
+          <li><a href="admin-dashboard.html">Dashboard</a></li>
+          <li><a href="admin-notices.html">Notices</a></li>
+          <li><a href="admin-results.html">Results</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Public Contact Page</a></li>
+          <li><a href="admin-contact-messages.html" class="dashboard-link active">Contact Messages</a></li>
+          <li><a href="admin-audit-log.html">Audit Log</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/admin-navigation.js"></script>
+  <script src="assets/js/admin-contact-messages.js"></script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

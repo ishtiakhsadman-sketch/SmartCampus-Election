@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SmartCampus Election | Student Dashboard</title>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+
+<body data-page="student-dashboard">
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+      <ul class="nav-menu student-top-nav" id="navMenu" data-student-top-nav>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="student-candidates.html" class="nav-link">Candidates</a></li>
+        <li><a href="ballot.html" class="nav-link">Ballot</a></li>
+        <li><a href="results.html" class="nav-link">Results</a></li>
+        <li><a href="student-profile.html" class="nav-link">Profile</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+
+    </header>
+
+  <section class="page-banner">
+      <div class="container">
+        <h1>Student Voting Dashboard</h1>
+        <p>Your personal election center for profile, candidate review, ballot access, and vote submission.</p>
+      </div>
+    </section>
+
+  <main class="dashboard-page section">
+    <div class="container dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar card modern-card">
+        <h3>Student Panel</h3>
+
+        <ul class="dashboard-nav">
+          <li><a href="student-dashboard.html" class="dashboard-link active">Dashboard Home</a></li>
+          <li><a href="student-profile.html" class="dashboard-link">My Profile</a></li>
+          <li><a href="ballot.html" class="dashboard-link">Cast Vote</a></li>
+          <li><a href="review-ballot.html" class="dashboard-link">Review Ballot</a></li>
+          <li><a href="results.html" class="dashboard-link">Election Results</a></li>
+        </ul>
+
+        <div class="home-countdown-card card modern-card" style="margin-top: 1.5rem; padding: 1.2rem; text-align: center; border: 1px solid rgba(20,107,58,0.15);">
+          <span class="badge badge-success" style="margin-bottom: 0.8rem; display: inline-block;">Election Starts In</span>
+          <div id="dashboardCountdown" class="countdown" style="gap: 0.5rem; justify-content: center; display: flex;">
+            <div class="countdown-box" style="padding: 0.5rem; min-width: 50px;">
+              <span id="dashDays" style="font-size: 1.2rem;">00</span>
+              <small style="font-size: 0.65rem;">Days</small>
+            </div>
+            <div class="countdown-box" style="padding: 0.5rem; min-width: 50px;">
+              <span id="dashHours" style="font-size: 1.2rem;">00</span>
+              <small style="font-size: 0.65rem;">Hours</small>
+            </div>
+            <div class="countdown-box" style="padding: 0.5rem; min-width: 50px;">
+              <span id="dashMinutes" style="font-size: 1.2rem;">00</span>
+              <small style="font-size: 0.65rem;">Mins</small>
+            </div>
+            <div class="countdown-box" style="padding: 0.5rem; min-width: 50px;">
+              <span id="dashSeconds" style="font-size: 1.2rem;">00</span>
+              <small style="font-size: 0.65rem;">Secs</small>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <section class="dashboard-main">
+        <!-- Voting Hero Panel -->
+        <article class="card dashboard-panel welcome-panel voting-hero-panel modern-card card-premium animated-bg" style="color: white; border: none; box-shadow: var(--shadow-deep);">
+          <div class="panel-head" style="position: relative; z-index: 2;">
+            <div>
+              <span class="badge badge-success">Verified Student Voter</span>
+              <h2>Ready to cast your vote?</h2>
+              <p class="muted">
+                Review candidates, select your choices, check your ballot carefully, and submit only when you are sure.
+              </p>
+            </div>
+
+            <div class="verification-box">
+              <span class="badge badge-premium glow-box">Voting Open</span>
+            </div>
+          </div>
+
+          <div class="voting-primary-action" style="position: relative; z-index: 2;">
+            <div>
+              <h3 style="font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; color: var(--primary-green-dark); margin-bottom: 0.5rem;">Start your voting journey</h3>
+              <p style="font-size: 1.1rem; line-height: 1.6; opacity: 0.95; max-width: 600px; color: #475569;">
+                Your vote helps choose student representatives for campus leadership, services, and academic support.
+              </p>
+            </div>
+
+            <div class="hero-actions">
+              <a href="ballot.html" class="btn btn-primary">Cast Vote Now</a>
+              <a href="student-candidates.html"class="btn btn-outline">Review Candidates</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Summary Cards -->
+        <div class="stats-grid four-stats">
+          <article class="stat-card modern-card float" style="animation-delay: 0.1s;">
+            <h3>Vote Status</h3>
+            <p id="dashboardVoteStatus" class="gradient-text">Loading...</p>
+          </article>
+
+          <article class="stat-card modern-card float" style="animation-delay: 0.2s;">
+            <h3>Election Status</h3>
+            <p id="dashboardElectionStatus" class="gradient-text">Loading...</p>
+          </article>
+
+          <article class="stat-card modern-card float" style="animation-delay: 0.3s;">
+            <h3>Profile Status</h3>
+            <p id="dashboardProfileStatus" class="gradient-text">Loading...</p>
+          </article>
+
+          <article class="stat-card modern-card float" style="animation-delay: 0.4s;">
+            <h3>Verification</h3>
+            <p id="dashboardVerificationStatus" class="gradient-text">Loading...</p>
+          </article>
+        </div>
+
+
+
+        <!-- Quick Actions -->
+        <article class="card dashboard-panel modern-card fade-in" style="animation-delay: 0.2s;">
+          <div class="panel-head">
+            <div>
+              <h2>Quick Voting Actions</h2>
+              <p class="muted">Go directly to the most important student voting tasks.</p>
+            </div>
+          </div>
+
+          <div class="card-grid three-col">
+            <a href="ballot.html" class="card action-card voting-action-card primary-vote-card">
+              <span class="badge badge-success">Main Action</span>
+              <h3>Open Ballot</h3>
+              <p>Select candidates for each available election position.</p>
+            </a>
+
+            <a href="review-ballot.html" class="card action-card voting-action-card">
+              <span class="badge badge-gold">Before Submit</span>
+              <h3>Review Ballot</h3>
+              <p>Double-check your selections before final confirmation.</p>
+            </a>
+
+            <a href="student-profile.html" class="card action-card voting-action-card">
+              <span class="badge badge-danger">Profile</span>
+              <h3>Update Profile</h3>
+              <p>Keep your student information accurate before voting.</p>
+            </a>
+          </div>
+        </article>
+
+        <!-- Voting Reminder -->
+        <article class="card dashboard-panel warning-panel modern-card fade-in" style="border: 2px solid var(--secondary-red); animation-delay: 0.3s;">
+          <span class="badge badge-danger pulse-glow">Important Voting Reminder</span>
+          <h2>Submit carefully</h2>
+          <p>
+            After final confirmation, your vote will be locked in this demo voting flow.
+            Please review your ballot before submitting.
+          </p>
+        </article>
+
+        <!-- Notices Preview -->
+        <article class="card dashboard-panel modern-card fade-in" style="animation-delay: 0.4s;">
+          <div class="panel-head">
+            <div>
+              <h2>Latest Election Notices</h2>
+              <p class="muted">Important announcements for voters.</p>
+            </div>
+
+            <a href="notices.html" class="btn btn-outline">View All</a>
+          </div>
+
+          <div id="dashboardNoticesPreview" class="dashboard-widget-list">
+            <!-- Preview notices inserted by inline JS -->
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>A sample frontend-only student election website for academic use.</p>
+      </div>
+
+      <div>
+        <h4>Student Tools</h4>
+        <ul class="footer-links">
+          <li><a href="student-profile.html">Profile</a></li>
+          <li><a href="ballot.html">Ballot</a></li>
+          <li><a href="review-ballot.html">Review Ballot</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Election</h4>
+        <ul class="footer-links">
+          <li><a href="student-candidates.html">Candidates</a></li>
+          <li><a href="results.html">Results</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/student-navigation.js?v=50"></script>
+
+  <script>
+    let dashboardPollingInterval;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Use existing API helper or fetch directly
+      loadStudentDashboardStatus();
+      if (window.loadLatestElectionNotices) {
+        window.loadLatestElectionNotices("dashboardNoticesPreview", 3);
+      }
+      startDashboardCountdown();
+      
+      // Auto-refresh every 15 seconds
+      dashboardPollingInterval = setInterval(() => {
+        loadStudentDashboardStatus();
+        if (window.loadLatestElectionNotices) {
+          window.loadLatestElectionNotices("dashboardNoticesPreview", 3);
+        }
+      }, 15000);
+    });
+
+    async function loadStudentDashboardStatus() {
+      try {
+        const token = localStorage.getItem("smartcampus_auth_token");
+        if (!token) return;
+
+        const res = await fetch(`${API_BASE_URL}/student/dashboard-status`, {
+          headers: { "Authorization": `Bearer ${token}` }
+        });
+        const data = await res.json();
+
+        if (data.success && data.data) {
+          const s = data.data;
+          document.getElementById("dashboardVoteStatus").textContent = s.voteStatus;
+          document.getElementById("dashboardElectionStatus").textContent = s.electionStatus;
+          document.getElementById("dashboardProfileStatus").textContent = s.profileStatus;
+          document.getElementById("dashboardVerificationStatus").textContent = s.verificationStatus;
+        }
+      } catch (err) {
+        console.error("Error loading dashboard status:", err);
+      }
+    }
+
+    function startDashboardCountdown() {
+      // Start with default target
+      let targetDate = new Date("May 19, 2026 17:30:00").getTime();
+      
+      // Fetch from backend non-blocking
+      fetch(`${API_BASE_URL}/election-setup`)
+        .then(res => res.json())
+        .then(data => {
+          // Optional: if data.setup contains a real countdown date we can use it here
+        })
+        .catch(e => { /* ignore */ });
+        
+      setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance <= 0) {
+           document.getElementById("dashDays").innerText = "00";
+           document.getElementById("dashHours").innerText = "00";
+           document.getElementById("dashMinutes").innerText = "00";
+           document.getElementById("dashSeconds").innerText = "00";
+           return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("dashDays").innerText = days < 10 ? "0" + days : days;
+        document.getElementById("dashHours").innerText = hours < 10 ? "0" + hours : hours;
+        document.getElementById("dashMinutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("dashSeconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+      }, 1000);
+    }
+  </script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

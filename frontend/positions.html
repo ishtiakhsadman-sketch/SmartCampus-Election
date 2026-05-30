@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SmartCampus Election | Positions</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/modern-design.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+
+<body data-page="positions">
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="positions.html" class="nav-link active">Positions</a></li>
+        <li><a href="candidates.html" class="nav-link">Candidates</a></li>
+        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li><a href="notices.html" class="nav-link">Notices</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline btn-modern">Login</a></li>
+        <!-- Auth items injected by renderPublicNavAuth() in api.js -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Premium Positions Hero -->
+    <section class="positions-hero">
+      <div class="container positions-hero-grid">
+        <div class="positions-hero-content">
+          <div class="positions-badge-row">
+            <span class="badge badge-success">Leadership Roles</span>
+            <span class="badge badge-gold">Student Representation</span>
+            <span class="badge badge-danger">Transparent Election</span>
+          </div>
+
+          <h1>Explore Election Positions</h1>
+
+          <p>
+            Learn about each leadership role, understand responsibilities, compare candidate counts,
+            and prepare to make an informed voting decision.
+          </p>
+
+          <div class="hero-actions">
+            <a href="candidates.html" class="btn btn-primary">View Candidates</a>
+            <a href="ballot.html" class="btn btn-secondary">Cast Vote</a>
+            <a href="schedule.html" class="btn btn-outline">See Schedule</a>
+          </div>
+        </div>
+
+        <aside class="card positions-hero-card">
+          <span class="position-hero-icon">🏛️</span>
+          <h2>Leadership starts with understanding the role.</h2>
+          <p>
+            Each position contributes to student welfare, communication, event coordination,
+            academic growth, and campus representation.
+          </p>
+
+          <div class="positions-hero-mini-grid">
+            <div>
+              <strong id="heroTotalPositions">16</strong>
+              <span>Positions</span>
+            </div>
+            <div>
+              <strong id="heroTotalSeats">18</strong>
+              <span>Seats</span>
+            </div>
+            <div>
+              <strong id="heroTotalCandidates">21</strong>
+              <span>Candidates</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Position Overview -->
+    <section class="section positions-overview-section">
+      <div class="container positions-overview-grid">
+        <div class="positions-overview-text">
+          <p class="section-kicker">Position Overview</p>
+          <h2>Understand the leadership structure before voting</h2>
+
+          <p>
+            Student election positions are not just titles. They define responsibilities,
+            communication channels, decision-making support, and student representation across campus.
+          </p>
+
+          <p>
+            Before casting a vote, students should know what each role does, how many seats are available,
+            and which candidates are competing for the position.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#allPositionsSection" class="btn btn-primary">Browse All Roles</a>
+            <a href="candidates.html" class="btn btn-outline">Compare Candidates</a>
+          </div>
+        </div>
+
+        <aside class="card positions-stat-card">
+          <span class="badge badge-gold">Election Role Summary</span>
+
+          <div class="positions-stat-list">
+            <div class="positions-stat-item">
+              <strong id="totalPositionsStat">16</strong>
+              <span>Total Positions</span>
+            </div>
+
+            <div class="positions-stat-item">
+              <strong id="totalSeatsStat">18</strong>
+              <span>Total Seats</span>
+            </div>
+
+            <div class="positions-stat-item">
+              <strong id="totalCandidatesStat">21</strong>
+              <span>Total Candidates</span>
+            </div>
+
+            <div class="positions-stat-item">
+              <strong>4-Step</strong>
+              <span>Voting Flow</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Featured Leadership Roles -->
+    <section class="section light-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Leadership Directory</p>
+          <h2>Featured Leadership Roles</h2>
+          <p>
+            These positions are among the most visible roles in the student leadership structure.
+          </p>
+        </div>
+
+        <div id="featuredPositionsGrid" class="positions-featured-grid">
+          <!-- Featured roles inserted by inline JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Search / Filter / All Positions -->
+    <section class="section positions-directory-section" id="allPositionsSection">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Election Roles</p>
+          <h2>All Election Positions</h2>
+          <p>
+            Search, filter, and sort positions to understand role responsibilities before voting.
+          </p>
+        </div>
+
+        <div class="card position-search-panel">
+          <div class="form-group">
+            <label for="positionSearch">Search Position</label>
+            <input
+              type="text"
+              id="positionSearch"
+              placeholder="Search by position name or responsibility"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="seatFilter">Filter by Seat Count</label>
+            <select id="seatFilter">
+              <option value="all">All Seats</option>
+              <option value="one">1 Seat</option>
+              <option value="multiple">Multiple Seats</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="positionSort">Sort By</label>
+            <select id="positionSort">
+              <option value="name-asc">Position Name A-Z</option>
+              <option value="seat-desc">Seat Count High-Low</option>
+              <option value="candidate-desc">Candidate Count High-Low</option>
+            </select>
+          </div>
+
+          <div class="form-group position-search-action">
+            <label>&nbsp;</label>
+            <button type="button" class="btn btn-outline" id="clearPositionFilters">
+              Clear Filters
+            </button>
+          </div>
+        </div>
+
+        <div class="positions-result-row">
+          <div>
+            <h3>Position Directory</h3>
+            <p id="positionResultCount" class="muted">Showing all positions</p>
+          </div>
+
+          <span class="badge badge-gold">Candidate links included</span>
+        </div>
+
+        <div id="positionsGrid" class="positions-grid-premium">
+          <!-- Premium position cards inserted by inline JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Roles Matter -->
+    <section class="section roles-matter-section">
+      <div class="container roles-matter-grid">
+        <div>
+          <p class="section-kicker">Student Representation</p>
+          <h2>Why these roles matter</h2>
+          <p>
+            Every role supports a different part of student life. Some roles focus on leadership and policy,
+            some coordinate communication, some support academic growth, and others help improve student welfare.
+          </p>
+
+          <p>
+            Understanding the responsibility behind each title helps students vote based on purpose,
+            not only popularity.
+          </p>
+        </div>
+
+        <div class="roles-matter-card">
+          <p>
+            “A strong election is not only about who wins. It is about choosing the right people
+            for the right responsibilities.”
+          </p>
+
+          <a href="candidates.html" class="btn btn-primary">Explore Candidates</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Responsibility Areas -->
+    <section class="section light-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Responsibility Areas</p>
+          <h2>How positions contribute to campus life</h2>
+          <p>
+            Each election position supports the student community in a different way.
+          </p>
+        </div>
+
+        <div class="responsibility-grid">
+          <article class="card responsibility-card">
+            <span class="responsibility-icon">👥</span>
+            <h3>Leadership</h3>
+            <p>
+              Top leadership roles guide student representation, planning, and decision-making.
+            </p>
+          </article>
+
+          <article class="card responsibility-card">
+            <span class="responsibility-icon">📣</span>
+            <h3>Communication</h3>
+            <p>
+              Secretary and public communication roles keep students informed and connected.
+            </p>
+          </article>
+
+          <article class="card responsibility-card">
+            <span class="responsibility-icon">📚</span>
+            <h3>Academic Support</h3>
+            <p>
+              Research, publication, and academic roles encourage learning and knowledge sharing.
+            </p>
+          </article>
+
+          <article class="card responsibility-card">
+            <span class="responsibility-icon">🤝</span>
+            <h3>Student Welfare</h3>
+            <p>
+              Welfare-focused positions help represent student needs and campus improvement ideas.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section positions-final-cta">
+      <div class="container positions-final-cta-box">
+        <div>
+          <p class="section-kicker">Ready to Compare?</p>
+          <h2>Ready to compare candidates for these positions?</h2>
+          <p>
+            Review candidate profiles, understand their manifesto, and choose the representatives
+            who can support your campus community.
+          </p>
+        </div>
+
+        <div class="cta-actions">
+          <a href="candidates.html" class="btn btn-primary">View Candidates</a>
+          <a href="register.html" class="btn btn-secondary">Register Now</a>
+          <a href="ballot.html" class="btn btn-outline">Cast Vote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer upgraded-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>
+          A student-centered digital election platform for transparent, organized,
+          and accessible campus leadership selection.
+        </p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="candidates.html">Candidates</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="notices.html">Notices</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Access</h4>
+        <ul class="footer-links">
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const fallbackPositions = [
+        {
+          title: "Vice President (VP)",
+          seats: 1,
+          responsibility: "Supports executive leadership, policy implementation, and student representation."
+        },
+        {
+          title: "General Secretary (GS)",
+          seats: 1,
+          responsibility: "Coordinates organizational activities, meetings, and strategic decisions."
+        },
+        {
+          title: "Assistant General Secretary (AGS)",
+          seats: 1,
+          responsibility: "Assists the General Secretary in operations and event coordination."
+        },
+        {
+          title: "Treasurer",
+          seats: 1,
+          responsibility: "Manages financial planning, budget records, and expense transparency."
+        },
+        {
+          title: "Organizing Secretary",
+          seats: 1,
+          responsibility: "Plans programs, manages event flow, and coordinates student activities."
+        },
+        {
+          title: "Office Secretary",
+          seats: 1,
+          responsibility: "Maintains records, office documents, and administrative communication."
+        },
+        {
+          title: "Public Relations Secretary",
+          seats: 1,
+          responsibility: "Handles communication, outreach, and public announcements."
+        },
+        {
+          title: "Cultural Secretary",
+          seats: 1,
+          responsibility: "Promotes cultural activities, programs, and student creative engagement."
+        },
+        {
+          title: "Sports Secretary",
+          seats: 1,
+          responsibility: "Supports sports events, tournaments, and athletic participation."
+        },
+        {
+          title: "Research & Publication Secretary",
+          seats: 1,
+          responsibility: "Encourages research, publication, writing, and academic collaboration."
+        },
+        {
+          title: "IT & Media Secretary",
+          seats: 1,
+          responsibility: "Manages digital communication, media updates, and technical support."
+        },
+        {
+          title: "Social Welfare Secretary",
+          seats: 1,
+          responsibility: "Represents student welfare needs and community support initiatives."
+        },
+        {
+          title: "Female Affairs Secretary",
+          seats: 1,
+          responsibility: "Supports representation, participation, and welfare for female students."
+        },
+        {
+          title: "Debate & Communication Secretary",
+          seats: 1,
+          responsibility: "Promotes debating, public speaking, and communication-based activities."
+        },
+        {
+          title: "Event Management Secretary",
+          seats: 1,
+          responsibility: "Supports event logistics, volunteer coordination, and program execution."
+        },
+        {
+          title: "Executive Committee Member",
+          seats: 3,
+          responsibility: "Supports the executive team and contributes to student representation."
+        }
+      ];
+
+      const positionIcons = {
+        "Vice President (VP)": "🏛️",
+        "General Secretary (GS)": "🧭",
+        "Assistant General Secretary (AGS)": "🤝",
+        "Treasurer": "💰",
+        "Organizing Secretary": "📋",
+        "Office Secretary": "🗂️",
+        "Public Relations Secretary": "📣",
+        "Cultural Secretary": "🎭",
+        "Sports Secretary": "🏆",
+        "Research & Publication Secretary": "📚",
+        "IT & Media Secretary": "💻",
+        "Social Welfare Secretary": "🤲",
+        "Female Affairs Secretary": "🌸",
+        "Debate & Communication Secretary": "🎙️",
+        "Event Management Secretary": "🎪",
+        "Executive Committee Member": "⭐"
+      };
+
+      const positionList = Array.isArray(window.positions) && window.positions.length
+        ? window.positions
+        : fallbackPositions;
+
+      const candidateList = Array.isArray(window.candidates) ? window.candidates : [];
+
+      const featuredTitles = [
+        "Vice President (VP)",
+        "General Secretary (GS)",
+        "Assistant General Secretary (AGS)",
+        "Executive Committee Member"
+      ];
+
+      const positionsGrid = document.getElementById("positionsGrid");
+      const featuredGrid = document.getElementById("featuredPositionsGrid");
+      const searchInput = document.getElementById("positionSearch");
+      const seatFilter = document.getElementById("seatFilter");
+      const sortSelect = document.getElementById("positionSort");
+      const clearButton = document.getElementById("clearPositionFilters");
+      const resultCount = document.getElementById("positionResultCount");
+
+      function getCandidateCount(positionTitle) {
+        return candidateList.filter(function (candidate) {
+          return candidate.position === positionTitle;
+        }).length;
+      }
+
+      function getTotalSeats() {
+        return positionList.reduce(function (sum, position) {
+          return sum + Number(position.seats || 1);
+        }, 0);
+      }
+
+      function updateStats() {
+        const totalPositions = positionList.length;
+        const totalSeats = getTotalSeats();
+        const totalCandidates = candidateList.length || 21;
+
+        [
+          "heroTotalPositions",
+          "totalPositionsStat"
+        ].forEach(function (id) {
+          const element = document.getElementById(id);
+          if (element) element.textContent = totalPositions;
+        });
+
+        [
+          "heroTotalSeats",
+          "totalSeatsStat"
+        ].forEach(function (id) {
+          const element = document.getElementById(id);
+          if (element) element.textContent = totalSeats;
+        });
+
+        [
+          "heroTotalCandidates",
+          "totalCandidatesStat"
+        ].forEach(function (id) {
+          const element = document.getElementById(id);
+          if (element) element.textContent = totalCandidates;
+        });
+      }
+
+      function buildPositionCard(position, isFeatured) {
+        const title = position.title;
+        const seats = Number(position.seats || 1);
+        const candidateCount = getCandidateCount(title);
+        const icon = positionIcons[title] || "🗳️";
+        const link = "candidates.html?position=" + encodeURIComponent(title);
+
+        return `
+          <article
+            class="card position-card-premium ${isFeatured ? "featured-position-premium" : ""}"
+            data-title="${title.toLowerCase()}"
+            data-seats="${seats}"
+            data-candidates="${candidateCount}"
+          >
+            <div class="position-card-top">
+              <span class="position-icon-circle">${icon}</span>
+
+              <div class="position-card-badges">
+                <span class="position-seat-badge">${seats} ${seats > 1 ? "Seats" : "Seat"}</span>
+                <span class="position-candidate-badge">${candidateCount} Candidate${candidateCount === 1 ? "" : "s"}</span>
+              </div>
+            </div>
+
+            <h3>${title}</h3>
+
+            <p>${position.responsibility}</p>
+
+            <div class="position-meta-row">
+              <span>Role Type</span>
+              <strong>${seats > 1 ? "Committee Role" : "Leadership Role"}</strong>
+            </div>
+
+            <div class="position-card-actions">
+              <a href="${link}" class="btn btn-primary">View Candidates</a>
+              <a href="ballot.html" class="btn btn-outline">Open Ballot</a>
+            </div>
+          </article>
+        `;
+      }
+
+      function getFilteredPositions() {
+        const searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : "";
+        const selectedSeatFilter = seatFilter ? seatFilter.value : "all";
+        const selectedSort = sortSelect ? sortSelect.value : "name-asc";
+
+        let filtered = positionList.filter(function (position) {
+          const title = position.title.toLowerCase();
+          const responsibility = String(position.responsibility || "").toLowerCase();
+          const seats = Number(position.seats || 1);
+
+          const matchesSearch =
+            !searchTerm ||
+            title.includes(searchTerm) ||
+            responsibility.includes(searchTerm);
+
+          const matchesSeat =
+            selectedSeatFilter === "all" ||
+            (selectedSeatFilter === "one" && seats === 1) ||
+            (selectedSeatFilter === "multiple" && seats > 1);
+
+          return matchesSearch && matchesSeat;
+        });
+
+        filtered.sort(function (a, b) {
+          if (selectedSort === "seat-desc") {
+            return Number(b.seats || 1) - Number(a.seats || 1);
+          }
+
+          if (selectedSort === "candidate-desc") {
+            return getCandidateCount(b.title) - getCandidateCount(a.title);
+          }
+
+          return a.title.localeCompare(b.title);
+        });
+
+        return filtered;
+      }
+
+      function renderFeaturedPositions() {
+        if (!featuredGrid) return;
+
+        const featured = positionList.filter(function (position) {
+          return featuredTitles.includes(position.title);
+        });
+
+        featuredGrid.innerHTML = featured
+          .map(function (position) {
+            return buildPositionCard(position, true);
+          })
+          .join("");
+      }
+
+      function renderAllPositions() {
+        if (!positionsGrid) return;
+
+        const filtered = getFilteredPositions();
+
+        if (resultCount) {
+          resultCount.textContent = `Showing ${filtered.length} position${filtered.length === 1 ? "" : "s"}`;
+        }
+
+        if (!filtered.length) {
+          positionsGrid.innerHTML = `
+            <article class="card position-empty-state">
+              <div class="empty-icon">🔎</div>
+              <h3>No positions found</h3>
+              <p>Try clearing filters or searching with a different keyword.</p>
+              <button type="button" class="btn btn-primary" id="emptyClearPositionFilters">
+                Clear Filters
+              </button>
+            </article>
+          `;
+
+          const emptyClearButton = document.getElementById("emptyClearPositionFilters");
+          if (emptyClearButton) {
+            emptyClearButton.addEventListener("click", clearFilters);
+          }
+
+          return;
+        }
+
+        positionsGrid.innerHTML = filtered
+          .map(function (position) {
+            return buildPositionCard(position, false);
+          })
+          .join("");
+      }
+
+      function clearFilters() {
+        if (searchInput) searchInput.value = "";
+        if (seatFilter) seatFilter.value = "all";
+        if (sortSelect) sortSelect.value = "name-asc";
+        renderAllPositions();
+      }
+
+      if (searchInput) searchInput.addEventListener("input", renderAllPositions);
+      if (seatFilter) seatFilter.addEventListener("change", renderAllPositions);
+      if (sortSelect) sortSelect.addEventListener("change", renderAllPositions);
+      if (clearButton) clearButton.addEventListener("click", clearFilters);
+
+      updateStats();
+      renderFeaturedPositions();
+      renderAllPositions();
+    });
+  </script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCampus Election | Admin Results</title>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/tables.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+<body data-page="admin-results">
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+      <ul class="nav-menu admin-top-nav" id="navMenu" data-admin-top-nav>
+        <li><a href="admin-dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="admin-results.html" class="nav-link">Results</a></li>
+        <li><a href="admin-contact-messages.html" class="dashboard-link">Contact Messages</a></li>
+        <li><a href="admin-audit-log.html" class="nav-link">Audit Log</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+
+    </header>
+
+  <section class="page-banner">
+      <div class="container">
+        <h1>Results Management</h1>
+        <p>Track counting status, publish results, review winners, and inspect chart summaries.</p>
+      </div>
+    </section>
+
+  <main class="dashboard-page section">
+    <div class="container dashboard-layout">
+      <aside class="dashboard-sidebar card">
+        <h3>Admin Panel</h3>
+        <ul class="dashboard-nav" id="adminSidebarNav" data-admin-sidebar-nav>
+          <li><a href="admin-dashboard.html" class="dashboard-link">Dashboard Home</a></li>
+          <li><a href="admin-ballot.html" class="dashboard-link">Ballot Config</a></li>
+          <li><a href="admin-results.html" class="dashboard-link active">Results</a></li>
+           <li><a href="admin-contact-messages.html" class="dashboard-link">Contact Messages</a></li>
+          <li><a href="admin-audit-log.html" class="dashboard-link">Audit Log</a></li>
+          <li><a href="election-setup.html" class="dashboard-link">Election Setup</a></li>
+        </ul>
+      </aside>
+
+      <section class="dashboard-main">
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <span class="badge badge-gold">Counting Status</span>
+              <h2 id="adminCountingStatusLabel">Counting In Progress</h2>
+              <p class="muted">Publish state can be simulated from this page.</p>
+            </div>
+            <button id="publishResultsBtn" class="btn btn-primary" type="button">Publish Results</button>
+          </div>
+        </article>
+
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Winner Summary Cards</h2>
+              <p class="muted">Sample winners are highlighted per configured result set.</p>
+            </div>
+          </div>
+
+          <div id="adminWinnerSummaryCards" class="card-grid three-col">
+            <!-- Rendered by admin.js -->
+          </div>
+        </article>
+
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Tabs by Position</h2>
+              <p class="muted">Switch tabs to preview results by position.</p>
+            </div>
+          </div>
+
+          <div id="adminResultsTabs" class="hero-actions">
+            <!-- Rendered by admin.js -->
+          </div>
+
+          <div id="adminResultsTabContent" class="dashboard-widget-list">
+            <!-- Rendered by admin.js -->
+          </div>
+        </article>
+
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Chart Section</h2>
+              <p class="muted">Simple frontend-only vote bars for selected position candidates.</p>
+            </div>
+          </div>
+
+          <div id="adminResultsChartSection" class="results-chart-grid">
+            <!-- Rendered by admin.js -->
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>A sample frontend-only student election website for academic use.</p>
+      </div>
+      <div>
+        <h4>Results Admin</h4>
+        <ul class="footer-links">
+          <li><a href="admin-ballot.html">Ballot Config</a></li>
+           <li><a href="admin-contact-messages.html" class="dashboard-link">Contact Messages</a></li>
+          <li><a href="admin-audit-log.html">Audit Log</a></li>
+          <li><a href="election-setup.html">Election Setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Administration</h4>
+        <ul class="footer-links">
+          <li><a href="admin-dashboard.html">Dashboard</a></li>
+          <li><a href="admin-notices.html">Notices</a></li>
+          <li><a href="admin-candidates.html">Candidates</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/admin-navigation.js"></script>
+  <script src="assets/js/admin.js"></script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

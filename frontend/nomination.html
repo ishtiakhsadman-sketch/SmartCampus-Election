@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCampus Election | Nomination Form</title>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+
+<body data-page="nomination">
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+      <ul class="nav-menu candidate-top-nav" id="navMenu" data-candidate-top-nav>
+        <li><a href="candidate-dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="nomination.html" class="nav-link">Nomination</a></li>
+        <li><a href="candidate-manage-profile.html" class="nav-link">Manage Profile</a></li>
+        <li><a href="candidate-campaign.html" class="nav-link">Campaign</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Nomination Form</h1>
+      <p>Submit your candidate information, manifesto, and supporting details for review.</p>
+    </div>
+  </section>
+
+  <main class="dashboard-page section">
+    <div class="container dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar card">
+        <h3>Candidate Panel</h3>
+        <ul class="dashboard-nav">
+          <li><a href="candidate-dashboard.html" class="dashboard-link">Dashboard Home</a></li>
+          <li><a href="nomination.html" class="dashboard-link active">Nomination Form</a></li>
+          <li><a href="candidate-manage-profile.html" class="dashboard-link">Manage Profile</a></li>
+          <li><a href="candidate-campaign.html" class="dashboard-link">Campaign Preview</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <section class="dashboard-main">
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <span class="badge badge-gold">Candidate Submission</span>
+              <h2>Nomination Application</h2>
+              <p class="muted">Fill out all required fields to complete this nomination form.</p>
+            </div>
+          </div>
+
+          <form id="nominationForm">
+            <div class="form-grid two-col">
+              <div class="form-group">
+                <label for="nomineeName">Full Name</label>
+                <input type="text" id="nomineeName" placeholder="Enter full name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="nomineeId">Student ID</label>
+                <input type="text" id="nomineeId" placeholder="Enter student ID" required />
+              </div>
+
+              <div class="form-group">
+                <label for="nomineeDepartment">Department</label>
+                <input type="text" id="nomineeDepartment" placeholder="Enter department" required />
+              </div>
+
+              <div class="form-group">
+                <label for="nomineeSession">Session</label>
+                <input type="text" id="nomineeSession" placeholder="e.g. 2022-23" required />
+              </div>
+
+              <div class="form-group">
+                <label for="desiredPosition">Desired Position</label>
+                <select id="desiredPosition" required>
+                  <option value="">Select a position</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="uploadPhoto">Upload Photo (JPG, PNG, WEBP)</label>
+                <input type="file" id="uploadPhoto" name="photo" accept=".jpg,.jpeg,.png,.webp" />
+                <div id="photoFileName" style="font-size: 0.9em; color: #555; margin-top: 5px;"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="shortBio">Short Bio</label>
+              <textarea id="shortBio" rows="4" placeholder="Write a short candidate biography" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="manifestoText">Manifesto</label>
+              <textarea id="manifestoText" rows="5" placeholder="Write your manifesto" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="achievementsText">Achievements</label>
+              <textarea id="achievementsText" rows="4"
+                placeholder="List achievements, activities, or leadership experience"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="uploadDocuments">Supporting Documents (PDF, DOCX, Images)</label>
+              <input type="file" id="uploadDocuments" name="documents" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                multiple />
+              <div id="docsFileNames" style="font-size: 0.9em; color: #555; margin-top: 5px;"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-inline">
+                <input type="checkbox" id="declarationCheck" required />
+                I declare that the information provided is accurate in this submission.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Nomination</button>
+          </form>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>A student election website for academic use.</p>
+      </div>
+      <div>
+        <h4>Candidate Tools</h4>
+        <ul class="footer-links">
+          <li><a href="candidate-dashboard.html">Dashboard</a></li>
+          <li><a href="candidate-manage-profile.html">Manage Profile</a></li>
+          <li><a href="candidate-campaign.html">Campaign</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Election</h4>
+        <ul class="footer-links">
+          <li><a href="positions.html">Positions</a></li>
+          <li><a href="notices.html">Notices</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/candidate-navigation.js?v=1"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      const positionSelect = document.getElementById("desiredPosition");
+      const nominationForm = document.getElementById("nominationForm");
+
+      // Load positions from backend
+      try {
+        const posRes = await fetch(`${API_BASE_URL}/positions`);
+        if (posRes.ok) {
+          const posData = await posRes.json();
+          if (posData.success && posData.positions && positionSelect) {
+            positionSelect.innerHTML = '<option value="">Select a position</option>' +
+              posData.positions.map((p) => `<option value="${p.title}">${p.title}</option>`).join("");
+          }
+        }
+      } catch (err) {
+        console.error("Error loading positions:", err);
+      }
+
+      // Pre-fill existing candidate data
+      try {
+        const profileRes = await apiRequest("/candidate/profile");
+        if (profileRes.success && profileRes.candidate) {
+          const c = profileRes.candidate;
+          document.getElementById("nomineeName").value = c.fullName || c.name || "";
+          document.getElementById("nomineeId").value = c.studentId || "";
+          document.getElementById("nomineeDepartment").value = c.department || "";
+          document.getElementById("nomineeSession").value = c.session || "";
+          if (c.desiredPosition) {
+            document.getElementById("desiredPosition").value = c.desiredPosition;
+          }
+          document.getElementById("shortBio").value = c.shortBio || c.bio || "";
+          document.getElementById("manifestoText").value = c.manifesto || "";
+          document.getElementById("achievementsText").value = c.achievements || c.goals || "";
+          // Files can't be pre-filled for security, but we could show existing files here
+        }
+      } catch (err) {
+        console.error("Error loading candidate profile:", err);
+      }
+
+      // Show selected file names
+      document.getElementById('uploadPhoto').addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        document.getElementById('photoFileName').textContent = file ? `Selected: ${file.name}` : '';
+      });
+      document.getElementById('uploadDocuments').addEventListener('change', function (e) {
+        const files = Array.from(e.target.files);
+        document.getElementById('docsFileNames').textContent = files.length > 0 ? `Selected: ${files.map(f => f.name).join(', ')}` : '';
+      });
+
+      nominationForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const isDeclared = document.getElementById("declarationCheck").checked;
+
+        if (!isDeclared) {
+          if (typeof openModal === "function") {
+            openModal("<h2>Declaration Required</h2><p>Please accept the declaration before submitting the nomination form.</p>");
+          }
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("fullName", document.getElementById("nomineeName").value.trim());
+        formData.append("studentId", document.getElementById("nomineeId").value.trim());
+        formData.append("department", document.getElementById("nomineeDepartment").value.trim());
+        formData.append("session", document.getElementById("nomineeSession").value.trim());
+        formData.append("desiredPosition", document.getElementById("desiredPosition").value);
+        formData.append("shortBio", document.getElementById("shortBio").value.trim());
+        formData.append("manifesto", document.getElementById("manifestoText").value.trim());
+        formData.append("achievements", document.getElementById("achievementsText").value.trim());
+
+        const photoFile = document.getElementById("uploadPhoto").files[0];
+        if (photoFile) {
+          formData.append("photo", photoFile);
+        }
+
+        const docFiles = document.getElementById("uploadDocuments").files;
+        for (let i = 0; i < docFiles.length; i++) {
+          formData.append("documents", docFiles[i]);
+        }
+
+        const token = localStorage.getItem("smartcampus_auth_token");
+        fetch(`${API_BASE_URL}/candidate/nomination`, {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${token}`
+          },
+          body: formData
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.success) {
+              if (typeof openModal === "function") {
+                openModal("<h2>Nomination Submitted</h2><p>Nomination submitted successfully.</p>");
+              }
+              nominationForm.reset();
+              setTimeout(() => {
+                window.location.href = "candidate-dashboard.html";
+              }, 3000);
+            } else {
+              if (typeof openModal === "function") {
+                openModal("<h2>Submission Error</h2><p>" + (data.message || "Failed to submit nomination.") + "</p>");
+              }
+            }
+          })
+          .catch((err) => {
+            console.error("Nomination error:", err);
+            if (typeof openModal === "function") {
+              openModal("<h2>Error</h2><p>Failed to connect to the server.</p>");
+            }
+          });
+      });
+    });
+  </script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+
+</html>

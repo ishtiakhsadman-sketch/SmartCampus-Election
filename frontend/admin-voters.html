@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCampus Election | Admin Voters</title>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/tables.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+<body data-page="admin-voters">
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+  <ul class="nav-menu admin-top-nav" id="navMenu" data-admin-top-nav>
+        <li><a href="admin-dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="admin-voters.html" class="nav-link">Voters</a></li>
+        <li><a href="admin-results.html" class="nav-link">Results</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+
+    </header>
+
+  <section class="page-banner">
+      <div class="container">
+        <h1>Voter Management</h1>
+        <p>Review voter verification, participation status, filtering, and export placeholder controls.</p>
+      </div>
+    </section>
+
+  <main class="dashboard-page section">
+    <div class="container dashboard-layout">
+      <aside class="dashboard-sidebar card">
+        <h3>Admin Panel</h3>
+        <ul class="dashboard-nav" id="adminSidebarNav" data-admin-sidebar-nav>
+          <li><a href="admin-dashboard.html" class="dashboard-link">Dashboard Home</a></li>
+          <li><a href="admin-candidates.html" class="dashboard-link">Candidates</a></li>
+          <li><a href="admin-voters.html" class="dashboard-link active">Voters</a></li>
+          <li><a href="admin-ballot.html" class="dashboard-link">Ballot Config</a></li>
+          <li><a href="admin-results.html" class="dashboard-link">Results</a></li>
+        </ul>
+      </aside>
+
+      <section class="dashboard-main">
+        <article class="card dashboard-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Voter Table</h2>
+              <p class="muted">Track verification status and voting completion across student voters.</p>
+            </div>
+            <button class="btn btn-outline" id="exportVotersBtn" type="button">Export Voters CSV</button>
+          </div>
+
+          <div class="filter-bar card">
+            <div class="form-group">
+              <label for="voterSearchInput">Search Voters</label>
+              <input type="text" id="voterSearchInput" placeholder="Search by name, ID, or department" />
+            </div>
+
+            <div class="form-group">
+              <label for="voterVerificationFilter">Verification Status</label>
+              <select id="voterVerificationFilter">
+                <option value="all">All</option>
+                <option value="Verified">Verified</option>
+                <option value="Pending">Pending</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="voterVotingStatusFilter">Voting Status</label>
+              <select id="voterVotingStatusFilter">
+                <option value="all">All</option>
+                <option value="Voted">Voted</option>
+                <option value="Not Voted">Not Voted</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table" id="adminVotersTable">
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th>Student ID</th>
+                  <th>Email</th>
+                  <th>Department</th>
+                  <th>Verification Status</th>
+                  <th>Voting Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminVotersTableBody">
+                <!-- Rendered by admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>A sample frontend-only student election website for academic use.</p>
+      </div>
+      <div>
+        <h4>Voter Admin</h4>
+        <ul class="footer-links">
+          <li><a href="admin-candidates.html">Candidates</a></li>
+          <li><a href="admin-ballot.html">Ballot</a></li>
+          <li><a href="admin-results.html">Results</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Administration</h4>
+        <ul class="footer-links">
+          <li><a href="admin-dashboard.html">Dashboard</a></li>
+          <li><a href="admin-notices.html">Notices</a></li>
+          <li><a href="admin-contact-messages.html" class="dashboard-link">Contact Messages</a></li>
+          <li><a href="admin-audit-log.html">Audit Log</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/admin-navigation.js"></script>
+  <script src="assets/js/admin.js"></script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

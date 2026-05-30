@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCampus Election | Student Profile</title>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+<body data-page="student-profile">
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+      <ul class="nav-menu student-top-nav" id="navMenu" data-student-top-nav>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="student-dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="ballot.html" class="nav-link">Ballot</a></li>
+        <li><a href="results.html" class="nav-link">Results</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+
+    </header>
+
+  <section class="page-banner">
+      <div class="container">
+        <h1>Student Profile</h1>
+        <p>Review and update your profile information before ballot submission.</p>
+      </div>
+    </section>
+
+  <main class="dashboard-page section">
+    <div class="container dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar card modern-card">
+        <h3>Student Panel</h3>
+        <ul class="dashboard-nav">
+          <li><a href="student-dashboard.html" class="dashboard-link">Dashboard Home</a></li>
+          <li><a href="student-profile.html" class="dashboard-link active">My Profile</a></li>
+          <li><a href="ballot.html" class="dashboard-link">Cast Vote</a></li>
+          <li><a href="review-ballot.html" class="dashboard-link">Review Ballot</a></li>
+          <li><a href="results.html" class="dashboard-link">Election Results</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main -->
+      <section class="dashboard-main">
+        <article class="card dashboard-panel modern-card fade-in">
+          <div class="panel-head">
+            <div>
+              <span class="badge badge-success">Verified Student</span>
+              <h2>Student Information Card</h2>
+              <p class="muted">Review your verified election profile status.</p>
+            </div>
+            <div class="avatar avatar-lg">
+              <img id="profileAvatarPreview" src="https://ui-avatars.com/api/?name=User&background=146b3a&color=fff&size=150&rounded=true&font-size=0.4&bold=true" alt="Student Avatar" />
+            </div>
+          </div>
+
+          <div class="stats-grid two-stats">
+            <article class="stat-card">
+              <h3>Voter Verification</h3>
+              <p>Approved</p>
+            </article>
+            <article class="stat-card">
+              <h3>Account Status</h3>
+              <p>Active</p>
+            </article>
+          </div>
+        </article>
+
+        <article class="card dashboard-panel modern-card fade-in" style="animation-delay: 0.2s;">
+          <div class="panel-head">
+            <div>
+              <h2>Editable Profile Form</h2>
+              <p class="muted">Update your details. This phase saves profile data locally.</p>
+            </div>
+          </div>
+
+          <form id="studentProfileForm">
+            <div class="form-grid two-col">
+              <div class="form-group">
+                <label for="profileStudentId">Student ID</label>
+                <input type="text" id="profileStudentId" value="SC-2026-1001" />
+              </div>
+
+              <div class="form-group">
+                <label for="profileFullName">Full Name</label>
+                <input type="text" id="profileFullName" value="" />
+              </div>
+
+              <div class="form-group">
+                <label for="profileDepartment">Department</label>
+                <input type="text" id="profileDepartment" value="Computer Science" />
+              </div>
+
+              <div class="form-group">
+                <label for="profileSession">Session</label>
+                <input type="text" id="profileSession" value="2022-23" />
+              </div>
+
+              <div class="form-group">
+                <label for="profileEmail">Email</label>
+                <input type="email" id="profileEmail" value="student@smartcampus.edu" />
+              </div>
+
+              <div class="form-group">
+                <label for="profilePhone">Phone</label>
+                <input type="tel" id="profilePhone" value="+8801700000000" />
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Profile</button>
+          </form>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>A sample frontend-only student election website for academic use.</p>
+      </div>
+      <div>
+        <h4>Student Tools</h4>
+        <ul class="footer-links">
+          <li><a href="student-dashboard.html">Dashboard</a></li>
+          <li><a href="ballot.html">Ballot</a></li>
+          <li><a href="review-ballot.html">Review Ballot</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Election</h4>
+        <ul class="footer-links">
+          <li><a href="student-candidates.html">Candidates</a></li>
+          <li><a href="results.html">Results</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/student-navigation.js?v=50"></script>
+  <script src="assets/js/student-profile.js?v=1"></script>
+
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

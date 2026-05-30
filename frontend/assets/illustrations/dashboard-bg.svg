@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#146b3a;stop-opacity:0.06" />
+      <stop offset="50%" style="stop-color:#d4af37;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#c62828;stop-opacity:0.06" />
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="500" fill="url(#dashGrad)"/>
+  
+  <!-- Chart-like elements -->
+  <g opacity="0.3">
+    <rect x="100" y="200" width="30" height="150" rx="4" fill="#146b3a"/>
+    <rect x="160" y="120" width="30" height="230" rx="4" fill="#c62828"/>
+    <rect x="220" y="180" width="30" height="170" rx="4" fill="#d4af37"/>
+  </g>
+  
+  <!-- Stats boxes -->
+  <rect x="450" y="100" width="120" height="80" rx="10" fill="#ffffff" opacity="0.4" stroke="#146b3a" stroke-width="2"/>
+  <rect x="450" y="220" width="120" height="80" rx="10" fill="#ffffff" opacity="0.4" stroke="#c62828" stroke-width="2"/>
+  
+  <!-- Progress circles -->
+  <circle cx="750" cy="150" r="40" fill="none" stroke="#146b3a" stroke-width="4" opacity="0.5"/>
+  <circle cx="750" cy="150" r="40" fill="none" stroke="#c62828" stroke-width="4" stroke-dasharray="188 251" opacity="0.8"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="80" cy="80" r="35" fill="#d4af37" opacity="0.15"/>
+  <circle cx="920" cy="420" r="50" fill="#146b3a" opacity="0.1"/>
+</svg>

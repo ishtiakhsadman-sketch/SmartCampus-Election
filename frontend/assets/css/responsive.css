@@ -1,0 +1,1588 @@
+/* =========================================================
+   SmartCampus Election - Responsive Stylesheet
+   Mobile, tablet, dashboard, forms, tables, ballot flow
+========================================================= */
+
+/* Large Tablet / Small Desktop */
+@media (max-width: 1100px) {
+  .hero-grid,
+  .two-col-layout,
+  .profile-header,
+  .cta-box {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-box {
+    display: grid;
+  }
+
+  .three-col,
+  .four-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dashboard-layout,
+  .ballot-layout,
+  .review-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-sidebar,
+  .sticky-summary {
+    position: static;
+  }
+
+  .four-stats,
+  .three-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ballot-stepper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--white);
+    padding: 14px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-soft);
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-link,
+  .nav-menu .btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .nav-link.active::after {
+    left: 16px;
+    transform: none;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .page-banner {
+    padding: 54px 0;
+  }
+
+  .page-banner h1 {
+    font-size: 2rem;
+  }
+
+  .three-col,
+  .four-col,
+  .two-col,
+  .countdown {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filter-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid.two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .four-stats,
+  .three-stats,
+  .two-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .ballot-stepper {
+    grid-template-columns: 1fr;
+  }
+
+  .widget-row,
+  .summary-row,
+  .candidate-option-top,
+  .panel-head,
+  .position-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .option-select-wrap {
+    justify-content: flex-start;
+  }
+
+  .review-actions {
+    justify-content: flex-start;
+  }
+
+  .data-table {
+    min-width: 690px;
+  }
+
+  .role-switcher {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .container {
+    width: min(94%, var(--container-width));
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .hero-actions,
+  .cta-actions,
+  .review-actions,
+  .option-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn,
+  .cta-actions .btn,
+  .review-actions .btn,
+  .review-actions button,
+  .option-actions .btn,
+  .option-actions button {
+    width: 100%;
+  }
+
+  .three-col,
+  .four-col,
+  .two-col,
+  .countdown {
+    grid-template-columns: 1fr;
+  }
+
+  .page-banner {
+    padding: 44px 0;
+  }
+
+  .home-banner {
+    padding: 52px 0 44px;
+  }
+
+  .page-banner h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-content h2,
+  .section-head h2 {
+    font-size: 1.65rem;
+  }
+
+  .card,
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-content {
+    border-radius: var(--radius);
+  }
+
+  .otp-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .countdown-box {
+    padding: 18px 10px;
+  }
+
+  .timeline-item {
+    padding: 18px;
+  }
+
+  .profile-header {
+    gap: 18px;
+  }
+
+  .candidate-photo,
+  .profile-photo {
+    min-height: 150px;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .dashboard-layout,
+  .ballot-layout,
+  .review-layout {
+    gap: 20px;
+  }
+
+  .dashboard-main,
+  .ballot-main {
+    gap: 20px;
+  }
+
+  .table-actions {
+    flex-direction: column;
+  }
+
+  .table-btn {
+    width: 100%;
+  }
+}
+
+/* Very Small Devices */
+@media (max-width: 380px) {
+  .logo span:last-child {
+    font-size: 0.92rem;
+  }
+
+  .logo-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .btn {
+    padding: 11px 16px;
+  }
+
+  .page-banner h1 {
+    font-size: 1.55rem;
+  }
+
+  .countdown-box span {
+    font-size: 1.55rem;
+  }
+}
+
+/* =========================================================
+   Homepage Upgrade Responsive Rules
+   Add this at the bottom of responsive.css
+========================================================= */
+
+@media (max-width: 1100px) {
+  .home-hero-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-countdown-card {
+    max-width: 760px;
+  }
+
+  .vote-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .candidate-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .candidate-cta-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    padding: 68px 0 58px;
+  }
+
+  .home-hero-title {
+    font-size: 2.45rem;
+  }
+
+  .home-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-trust-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .why-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vote-steps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mini-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .candidate-cta-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-hero {
+    padding: 54px 0 46px;
+  }
+
+  .home-hero-title {
+    font-size: 2rem;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-badge-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-countdown-card {
+    width: 100%;
+  }
+
+  .vote-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vote-step-card {
+    min-height: 0;
+  }
+
+  .candidate-cta-box {
+    gap: 18px;
+  }
+
+  .candidate-cta-actions {
+    flex-direction: column;
+  }
+
+  .timeline-home-section .timeline-item::before {
+    left: -10px;
+  }
+}
+
+/* =========================================================
+   Candidate Browsing Responsive Upgrade
+   Add this at the bottom of responsive.css
+========================================================= */
+
+@media (max-width: 1100px) {
+  .candidate-browse-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .candidate-filter-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campaign-profile-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .campaign-profile-photo {
+    min-height: 230px;
+  }
+
+  .profile-meta-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campaign-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .campaign-contact-panel {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .candidate-filter-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .candidate-filter-action .btn {
+    width: 100%;
+  }
+
+  .candidate-result-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .candidate-card-actions {
+    flex-direction: column;
+  }
+
+  .candidate-card-actions .btn {
+    width: 100%;
+  }
+
+  .profile-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-action-row {
+    flex-direction: column;
+  }
+
+  .profile-action-row .btn {
+    width: 100%;
+  }
+
+  .campaign-profile-hero::after {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .candidate-card-top {
+    align-items: flex-start;
+  }
+
+  .candidate-avatar-placeholder {
+    width: 58px;
+    height: 58px;
+    font-size: 1.05rem;
+  }
+
+  .campaign-profile-photo {
+    min-height: 180px;
+    font-size: 2.5rem;
+  }
+
+  .goal-item {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-item span {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* =========================================================
+   Premium About Page Responsive Rules
+   Add this at the bottom of responsive.css
+========================================================= */
+
+@media (max-width: 1100px) {
+  .about-hero-grid,
+  .about-overview-grid,
+  .about-why-box {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values-grid,
+  .about-trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-final-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-final-cta-box .cta-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 70px 0 60px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.05em;
+  }
+
+  .about-badge-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-mini-stat-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .about-mission-grid,
+  .about-values-grid,
+  .about-trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stat-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-timeline::before {
+    left: 25px;
+  }
+
+  .about-timeline-item {
+    grid-template-columns: 52px 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .about-timeline-number {
+    width: 52px;
+    height: 52px;
+    font-size: 0.9rem;
+  }
+
+  .about-final-cta-box {
+    padding: 26px;
+  }
+
+  .about-final-cta-box .cta-actions {
+    flex-direction: column;
+  }
+
+  .about-final-cta-box .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-hero {
+    padding: 56px 0 48px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 2.05rem;
+  }
+
+  .about-hero-card::after {
+    display: none;
+  }
+
+  .about-card-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 1.75rem;
+  }
+
+  .about-quote-card {
+    padding: 22px;
+  }
+
+  .about-quote-card p {
+    font-size: 1.05rem;
+  }
+
+  .about-timeline-item:hover {
+    transform: none;
+  }
+}
+/* =========================================================
+   Premium Positions Page Responsive Rules
+   Add this at the bottom of responsive.css
+========================================================= */
+
+@media (max-width: 1200px) {
+  .positions-featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .positions-grid-premium {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .responsibility-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .positions-hero-grid,
+  .positions-overview-grid,
+  .roles-matter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .position-search-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .positions-final-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .positions-final-cta-box .cta-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .positions-hero {
+    padding: 70px 0 60px;
+  }
+
+  .positions-hero-content h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.05em;
+  }
+
+  .positions-badge-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .positions-hero-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .positions-featured-grid,
+  .positions-grid-premium,
+  .responsibility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .position-search-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .position-search-action .btn {
+    width: 100%;
+  }
+
+  .positions-stat-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .positions-result-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .position-card-actions {
+    flex-direction: column;
+  }
+
+  .position-card-actions .btn {
+    width: 100%;
+  }
+
+  .position-card-badges {
+    align-items: flex-start;
+  }
+
+  .positions-final-cta-box {
+    padding: 26px;
+  }
+
+  .positions-final-cta-box .cta-actions {
+    flex-direction: column;
+  }
+
+  .positions-final-cta-box .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .positions-hero {
+    padding: 56px 0 48px;
+  }
+
+  .positions-hero-content h1 {
+    font-size: 2.05rem;
+  }
+
+  .positions-hero-card::after {
+    display: none;
+  }
+
+  .position-card-top {
+    flex-direction: column;
+  }
+
+  .position-icon-circle,
+  .position-hero-icon {
+    width: 62px;
+    height: 62px;
+    font-size: 1.55rem;
+  }
+
+  .position-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .roles-matter-card {
+    padding: 22px;
+  }
+
+  .roles-matter-card p {
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================================================
+   Premium Schedule Page Responsive Rules
+   Add this at the bottom of responsive.css
+========================================================= */
+
+@media (max-width: 1200px) {
+  .schedule-highlight-grid,
+  .schedule-matter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .schedule-hero-grid,
+  .schedule-overview-grid,
+  .schedule-reminder-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-final-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule-final-cta-box .cta-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-hero {
+    padding: 70px 0 60px;
+  }
+
+  .schedule-hero-content h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.05em;
+  }
+
+  .schedule-badge-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule-hero-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-highlight-grid,
+  .schedule-matter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-stat-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule-timeline::before {
+    left: 28px;
+  }
+
+  .schedule-timeline-item {
+    grid-template-columns: 56px 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .schedule-timeline-number {
+    width: 56px;
+    height: 56px;
+    font-size: 0.9rem;
+  }
+
+  .schedule-event-top {
+    align-items: flex-start;
+  }
+
+  .schedule-final-cta-box {
+    padding: 26px;
+  }
+
+  .schedule-final-cta-box .cta-actions {
+    flex-direction: column;
+  }
+
+  .schedule-final-cta-box .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .schedule-hero {
+    padding: 56px 0 48px;
+  }
+
+  .schedule-hero-content h1 {
+    font-size: 2.05rem;
+  }
+
+  .schedule-hero-card::after {
+    display: none;
+  }
+
+  .schedule-hero-icon {
+    width: 62px;
+    height: 62px;
+    font-size: 1.55rem;
+  }
+
+  .schedule-timeline-item:hover {
+    transform: none;
+  }
+
+  .schedule-reminder-card {
+    align-items: flex-start;
+  }
+
+  .schedule-final-cta-box {
+    padding: 22px;
+  }
+}
+
+/* =========================================================
+   Premium Notices Page Responsive Rules
+   Add this at the bottom of responsive.css
+========================================================= */
+
+@media (max-width: 1200px) {
+  .notice-category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .notices-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notices-filter-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .notices-final-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notices-final-cta-box .cta-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .notices-hero {
+    padding: 70px 0 60px;
+  }
+
+  .notices-hero-content h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.05em;
+  }
+
+  .notices-badge-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notices-hero-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notices-important-grid,
+  .notices-grid-premium,
+  .notice-category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notices-filter-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .notices-filter-action .btn {
+    width: 100%;
+  }
+
+  .notices-result-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notice-card-top {
+    flex-direction: column;
+  }
+
+  .notice-badge-stack {
+    align-items: flex-start;
+  }
+
+  .notice-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notice-card-footer .btn {
+    width: 100%;
+  }
+
+  .notices-final-cta-box {
+    padding: 26px;
+  }
+
+  .notices-final-cta-box .cta-actions {
+    flex-direction: column;
+  }
+
+  .notices-final-cta-box .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .notices-hero {
+    padding: 56px 0 48px;
+  }
+
+  .notices-hero-content h1 {
+    font-size: 2.05rem;
+  }
+
+  .notices-hero-card::after {
+    display: none;
+  }
+
+  .notices-hero-icon,
+  .notice-icon-circle {
+    width: 62px;
+    height: 62px;
+    font-size: 1.55rem;
+  }
+
+  .notice-card-premium {
+    min-height: auto;
+  }
+
+  .notices-final-cta-box {
+    padding: 22px;
+  }
+}
+
+/* =========================================================
+   Premium Contact Page Responsive Rules
+   Add this at the bottom of responsive.css
+========================================================= */
+
+@media (max-width: 1200px) {
+  .contact-support-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .contact-hero-grid,
+  .contact-layout-premium {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-map-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-map-footer .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 70px 0 60px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.05em;
+  }
+
+  .contact-badge-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-hero-mini-grid,
+  .contact-support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-map-head {
+    flex-direction: column;
+    padding: 22px 22px 16px;
+  }
+
+  .contact-map-frame {
+    margin: 0 22px;
+  }
+
+  .contact-map-footer {
+    padding: 18px 22px 22px;
+  }
+
+  .contact-map-frame iframe {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-hero {
+    padding: 56px 0 48px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 2.05rem;
+  }
+
+  .contact-hero-card::after {
+    display: none;
+  }
+
+  .contact-hero-icon,
+  .contact-map-pin {
+    width: 62px;
+    height: 62px;
+    font-size: 1.55rem;
+  }
+
+  .contact-map-frame iframe {
+    min-height: 260px;
+  }
+}
+/* =========================================================
+   Admin Navbar Responsive Fix
+========================================================= */
+
+@media (max-width: 1400px) {
+  .admin-top-nav {
+    gap: 4px;
+  }
+
+  .admin-top-nav .nav-link,
+  .admin-top-link {
+    padding: 8px 8px;
+    font-size: 0.78rem;
+  }
+
+  .admin-logout-btn {
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+
+  .logo {
+    gap: 10px;
+  }
+
+  .logo span:not(.logo-mark) {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar {
+    gap: 12px;
+  }
+
+  .admin-top-nav {
+    flex-wrap: wrap;
+    row-gap: 8px;
+    justify-content: flex-end;
+  }
+
+  .admin-top-nav .nav-link,
+  .admin-top-link,
+  .admin-logout-btn {
+    min-height: 36px;
+    padding: 7px 9px;
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .logo {
+    min-width: auto;
+    max-width: calc(100% - 70px);
+  }
+
+  .logo span:not(.logo-mark) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .admin-top-nav {
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    right: 16px;
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .admin-top-nav.active,
+  .admin-top-nav.show {
+    display: flex;
+  }
+
+  .admin-top-nav li {
+    width: 100%;
+  }
+
+  .admin-top-nav .nav-link,
+  .admin-top-link,
+  .admin-logout-btn {
+    width: 100%;
+    justify-content: flex-start;
+    min-height: 44px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    gap: 8px;
+  }
+
+  .logo-mark {
+    width: 46px;
+    height: 46px;
+    font-size: 0.95rem;
+  }
+
+  .logo span:not(.logo-mark) {
+    font-size: 0.95rem;
+  }
+}
+/* =========================================================
+   Admin Full Width Layout Responsive Fix
+========================================================= */
+
+@media (max-width: 768px) {
+  body[data-page^="admin"] .dashboard-page,
+  body[data-page="election-setup"] .dashboard-page {
+    padding-top: 32px;
+  }
+
+  body[data-page^="admin"] .dashboard-page .container,
+  body[data-page="election-setup"] .dashboard-page .container {
+    width: min(100% - 24px, 1320px);
+  }
+}
+/* =========================================================
+   Student Top Navbar Responsive Fix
+========================================================= */
+
+@media (max-width: 1200px) {
+  .student-top-nav {
+    gap: 6px;
+  }
+
+  .student-top-nav .nav-link,
+  .student-top-link,
+  .student-logout-btn {
+    padding: 8px 10px;
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .student-top-nav {
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    right: 16px;
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .student-top-nav.active,
+  .student-top-nav.show {
+    display: flex;
+  }
+
+  .student-top-nav li {
+    width: 100%;
+  }
+
+  .student-top-nav .nav-link,
+  .student-top-link,
+  .student-logout-btn {
+    width: 100%;
+    justify-content: flex-start;
+    min-height: 44px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body[data-page="student-dashboard"] .dashboard-page,
+  body[data-page="student-profile"] .dashboard-page,
+  body[data-page="ballot"] .dashboard-page,
+  body[data-page="review-ballot"] .dashboard-page,
+  body[data-page="vote-success"] .dashboard-page,
+  body[data-page="results"] .dashboard-page {
+    padding-top: 32px;
+  }
+
+  body[data-page="student-dashboard"] .dashboard-page .container,
+  body[data-page="student-profile"] .dashboard-page .container,
+  body[data-page="ballot"] .dashboard-page .container,
+  body[data-page="review-ballot"] .dashboard-page .container,
+  body[data-page="vote-success"] .dashboard-page .container,
+  body[data-page="results"] .dashboard-page .container {
+    width: min(100% - 24px, 1320px);
+  }
+}
+
+@media (max-width: 576px) {
+  body[data-page="student-dashboard"] .logo,
+  body[data-page="student-profile"] .logo,
+  body[data-page="ballot"] .logo,
+  body[data-page="review-ballot"] .logo,
+  body[data-page="vote-success"] .logo,
+  body[data-page="results"] .logo {
+    gap: 8px;
+    min-width: auto;
+  }
+
+  body[data-page="student-dashboard"] .logo span:not(.logo-mark),
+  body[data-page="student-profile"] .logo span:not(.logo-mark),
+  body[data-page="ballot"] .logo span:not(.logo-mark),
+  body[data-page="review-ballot"] .logo span:not(.logo-mark),
+  body[data-page="vote-success"] .logo span:not(.logo-mark),
+  body[data-page="results"] .logo span:not(.logo-mark) {
+    font-size: 0.95rem;
+  }
+}
+/* =========================================================
+   Student Navbar + Account Dropdown Responsive
+========================================================= */
+
+@media (max-width: 1200px) {
+  .student-top-nav {
+    gap: 6px;
+  }
+
+  .student-top-nav .nav-link,
+  .student-top-link {
+    padding: 8px 10px;
+    font-size: 0.84rem;
+  }
+
+  .student-account-name {
+    max-width: 86px;
+  }
+
+  .student-account-btn {
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .student-top-nav {
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    right: 16px;
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .student-top-nav.active,
+  .student-top-nav.show {
+    display: flex;
+  }
+
+  .student-top-nav li,
+  .student-account-nav-item {
+    width: 100%;
+  }
+
+  .student-top-nav .nav-link,
+  .student-top-link,
+  .student-account-btn {
+    width: 100%;
+    justify-content: flex-start;
+    min-height: 44px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .student-account-dropdown {
+    position: static;
+    width: 100%;
+    margin-top: 8px;
+    box-shadow: none;
+    border-radius: 14px;
+  }
+
+  .student-account-wrap.open .student-account-dropdown {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .student-account-name {
+    max-width: 150px;
+  }
+}
+/* =========================================================
+   Student Account Dropdown Responsive Fix
+========================================================= */
+
+@media (max-width: 1200px) {
+  .student-top-nav {
+    gap: 6px;
+  }
+
+  .student-top-nav .nav-link,
+  .student-top-link {
+    padding: 8px 10px;
+    font-size: 0.84rem;
+  }
+
+  .student-account-name {
+    max-width: 90px;
+  }
+
+  .student-account-btn {
+    padding-right: 10px;
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .student-top-nav {
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    right: 16px;
+    z-index: 2500;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid var(--border-soft, #dbe4ec);
+    border-radius: var(--radius, 18px);
+    box-shadow: var(--shadow-lg, 0 22px 55px rgba(15, 23, 42, 0.16));
+  }
+
+  .student-top-nav.active,
+  .student-top-nav.show {
+    display: flex;
+  }
+
+  .student-top-nav li,
+  .student-account-nav-item {
+    width: 100%;
+  }
+
+  .student-top-nav .nav-link,
+  .student-top-link,
+  .student-account-btn {
+    width: 100%;
+    justify-content: flex-start;
+    min-height: 44px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .student-account-wrap {
+    width: 100%;
+  }
+
+  .student-account-dropdown {
+    position: static;
+    width: 100%;
+    margin-top: 8px;
+    box-shadow: none;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .student-account-name {
+    max-width: 150px;
+  }
+}
+/* =========================================================
+   Candidate Top Navbar Responsive Fix
+========================================================= */
+
+@media (max-width: 1200px) {
+  .candidate-top-nav {
+    gap: 6px;
+  }
+
+  .candidate-top-nav .nav-link,
+  .candidate-top-link,
+  .candidate-logout-btn {
+    padding: 8px 10px;
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .candidate-top-nav {
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    right: 16px;
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid var(--border-soft, #dbe4ec);
+    border-radius: var(--radius, 18px);
+    box-shadow: var(--shadow-lg, 0 22px 55px rgba(15, 23, 42, 0.16));
+  }
+
+  .candidate-top-nav.active,
+  .candidate-top-nav.show {
+    display: flex;
+  }
+
+  .candidate-top-nav li {
+    width: 100%;
+  }
+
+  .candidate-top-nav .nav-link,
+  .candidate-top-link,
+  .candidate-logout-btn {
+    width: 100%;
+    justify-content: flex-start;
+    min-height: 44px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body[data-page="candidate-dashboard"] .dashboard-page,
+  body[data-page="nomination"] .dashboard-page,
+  body[data-page="candidate-manage-profile"] .dashboard-page,
+  body[data-page="candidate-campaign"] .dashboard-page {
+    padding-top: 32px;
+  }
+
+  body[data-page="candidate-dashboard"] .dashboard-page .container,
+  body[data-page="nomination"] .dashboard-page .container,
+  body[data-page="candidate-manage-profile"] .dashboard-page .container,
+  body[data-page="candidate-campaign"] .dashboard-page .container {
+    width: min(100% - 24px, 1320px);
+  }
+}
+
+/* Ballot Configuration Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .ballot-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .ballot-card-settings {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .settings-group {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .toggle-setting {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

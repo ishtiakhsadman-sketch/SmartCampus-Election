@@ -1,0 +1,32 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="candGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#146b3a;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#candGrad)"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="80" cy="60" r="40" fill="#c62828" opacity="0.15"/>
+  <circle cx="700" cy="300" r="60" fill="#146b3a" opacity="0.12"/>
+  
+  <!-- People silhouettes -->
+  <g opacity="0.4">
+    <circle cx="150" cy="100" r="20" fill="#146b3a"/>
+    <rect x="135" y="125" width="30" height="50" rx="5" fill="#146b3a"/>
+    
+    <circle cx="350" cy="120" r="22" fill="#c62828"/>
+    <rect x="333" y="150" width="34" height="55" rx="6" fill="#c62828"/>
+    
+    <circle cx="600" cy="110" r="18" fill="#d4af37"/>
+    <rect x="588" y="135" width="24" height="48" rx="4" fill="#d4af37"/>
+  </g>
+  
+  <!-- Voting indicators -->
+  <rect x="120" y="250" width="80" height="100" rx="8" fill="#ffffff" opacity="0.3" stroke="#146b3a" stroke-width="2"/>
+  <circle cx="160" cy="280" r="12" fill="#c62828"/>
+  
+  <rect x="350" y="260" width="80" height="100" rx="8" fill="#ffffff" opacity="0.3" stroke="#c62828" stroke-width="2"/>
+  <path d="M 385 300 L 395 315 L 410 290" stroke="#146b3a" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

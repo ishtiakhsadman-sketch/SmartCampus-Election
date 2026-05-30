@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SmartCampus Election | Ballot</title>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/modern-design.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <link rel="stylesheet" href="assets/css/transitions.css" />
+</head>
+
+<body data-page="ballot">
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SC</span>
+        <span>SmartCampus Election</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+      <ul class="nav-menu student-top-nav" id="navMenu" data-student-top-nav>
+        <li><a href="student-dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="student-profile.html" class="nav-link">Profile</a></li>
+        <li><a href="ballot.html" class="nav-link">Ballot</a></li>
+        <li><a href="review-ballot.html" class="nav-link">Review</a></li>
+        <li><a href="results.html" class="nav-link">Results</a></li>
+        <li><a href="login.html" class="btn btn-sm btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+
+    </header>
+
+  <section class="page-banner">
+      <div class="container">
+        <h1>Cast Your Ballot</h1>
+        <p>Select candidates carefully, review your choices, and submit your vote with confidence.</p>
+      </div>
+    </section>
+
+  <main class="dashboard-page section bg-pattern-shapes">
+    <div class="container ballot-layout">
+      <!-- Main Ballot Area -->
+      <section class="ballot-main">
+        <!-- Stepper -->
+        <article class="card dashboard-panel modern-card fade-in">
+          <div class="ballot-stepper">
+            <div class="step-item active">
+              <span class="step-number">1</span>
+              <span>Select Candidates</span>
+            </div>
+
+            <div class="step-item">
+              <span class="step-number">2</span>
+              <span>Review Ballot</span>
+            </div>
+
+            <div class="step-item">
+              <span class="step-number">3</span>
+              <span>Confirm Submission</span>
+            </div>
+
+            <div class="step-item">
+              <span class="step-number">4</span>
+              <span>Vote Submitted</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Helpful Instructions -->
+        <article class="card dashboard-panel voting-instruction-card modern-card fade-in" style="animation-delay: 0.1s;">
+          <div class="panel-head">
+            <div>
+              <span class="badge badge-gold">Before You Start</span>
+              <h2>Voting Instructions</h2>
+              <p class="muted">
+                Choose one candidate for most positions. For Executive Committee Member,
+                you may select up to the allowed seat limit.
+              </p>
+            </div>
+
+            <a href="student-candidates.html" class="btn btn-outline">Compare Candidates</a>
+          </div>
+
+          <div class="instruction-grid">
+            <div class="instruction-item">
+              <strong>1. Read</strong>
+              <span>Check candidate details and manifesto.</span>
+            </div>
+
+            <div class="instruction-item">
+              <strong>2. Select</strong>
+              <span>Choose your preferred candidate.</span>
+            </div>
+
+            <div class="instruction-item">
+              <strong>3. Review</strong>
+              <span>Verify all choices before submission.</span>
+            </div>
+
+            <div class="instruction-item">
+              <strong>4. Submit</strong>
+              <span>Final submission locks your vote.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lock State -->
+        <article id="ballotLockedNotice" class="card dashboard-panel ballot-locked results-hidden modern-card" style="border: 2px solid var(--secondary-red);">
+          <span class="badge badge-danger">Ballot Locked</span>
+          <h2>Your vote has already been submitted</h2>
+          <p>
+            You cannot edit ballot selections after final confirmation in this demo flow.
+            You may view your submission status from the success page.
+          </p>
+          <a href="vote-success.html" class="btn btn-primary">View Submission Status</a>
+        </article>
+
+        <!-- Ballot Render -->
+        <div id="ballotContent">
+          <!-- Ballot positions inserted by ballot.js -->
+        </div>
+
+        <!-- Next Step -->
+        <article class="card dashboard-panel next-step-panel modern-card fade-in">
+          <div class="panel-head">
+            <div>
+              <span class="badge badge-success">Next Step</span>
+              <h2>Review Before Final Submission</h2>
+              <p class="muted">
+                Your selections are saved automatically. Review your ballot before final confirmation.
+              </p>
+            </div>
+
+            <a href="review-ballot.html" id="reviewBallotBtn" class="btn btn-primary">Review Ballot</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- Summary Sidebar -->
+      <aside class="ballot-summary-sidebar">
+        <article class="card dashboard-panel sticky-summary modern-card fade-in" style="animation-delay: 0.2s;">
+          <div class="panel-head">
+            <div>
+              <span class="badge badge-gold">Live Summary</span>
+              <h2>Your Selections</h2>
+              <p class="muted">Track your current ballot selections in real time.</p>
+            </div>
+          </div>
+
+          <div id="ballotSelectionSummary" class="summary-widget-list">
+            <!-- Selection summary inserted by ballot.js -->
+          </div>
+
+          <div class="ballot-security-note">
+            <strong>Reminder:</strong>
+            <span>Final submission cannot be edited later. Review carefully before confirming.</span>
+          </div>
+        </article>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartCampus Election</h3>
+        <p>A sample frontend-only student election website for academic use.</p>
+      </div>
+
+      <div>
+        <h4>Voting Flow</h4>
+        <ul class="footer-links">
+          <li><a href="ballot.html">Select Candidates</a></li>
+          <li><a href="review-ballot.html">Review Ballot</a></li>
+          <li><a href="vote-success.html">Submission Status</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Student Area</h4>
+        <ul class="footer-links">
+          <li><a href="student-dashboard.html">Dashboard</a></li>
+          <li><a href="student-profile.html">Profile</a></li>
+          <li><a href="results.html">Results</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCampus Election. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared Modal -->
+  <div class="modal" id="globalModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/student-navigation.js?v=50"></script>
+  <script src="assets/js/ballot.js"></script>
+
+  <script src="assets/js/transitions.js"></script>
+</body>
+</html>

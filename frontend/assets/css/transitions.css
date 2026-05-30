@@ -1,0 +1,50 @@
+/* =========================================================
+   SmartCampus Election — Page Transitions
+   Red-Green Gradient Loading Screen
+========================================================= */
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #14532d, #b91c1c);
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.page-transition-text::after {
+  content: "";
+  animation: loadingDots 1s infinite;
+}
+
+@keyframes loadingDots {
+  0% { content: ""; }
+  33% { content: "."; }
+  66% { content: ".."; }
+  100% { content: "..."; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-overlay {
+    transition: none !important;
+  }
+  .page-transition-text::after {
+    animation: none !important;
+    content: "...";
+  }
+}
