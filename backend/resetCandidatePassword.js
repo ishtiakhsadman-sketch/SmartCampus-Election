@@ -12,9 +12,9 @@ async function resetCandidatePassword() {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("MongoDB connected");
 
-    const candidateStudentId = "CAND-018";
-    const candidateEmail = "candidate18@smartcampus.edu";
-    const newPassword = "candidate123";
+    const candidateStudentId = process.env.CANDIDATE_STUDENT_ID || "CAND-001";
+    const candidateEmail = process.env.CANDIDATE_EMAIL || "candidate@smartcampus.edu";
+    const newPassword = process.env.CANDIDATE_PASSWORD || "defaultPassword123";
 
     const hashedPassword = await bcrypt.hash(newPassword, 10);
 
@@ -27,26 +27,26 @@ async function resetCandidatePassword() {
 
     if (!user) {
       user = await User.create({
-        name: "Imran Kabir",
+        name: process.env.CANDIDATE_NAME || "Sample Candidate",
         studentId: candidateStudentId,
         email: candidateEmail,
         password: hashedPassword,
         role: "candidate",
-        department: "Physical Education",
-        session: "2021-22",
-        phone: "",
+        department: process.env.CANDIDATE_DEPARTMENT || "Engineering",
+        session: process.env.CANDIDATE_SESSION || "2021-22",
+        phone: process.env.CANDIDATE_PHONE || "",
         verificationStatus: "Verified"
       });
 
       console.log("Candidate user account created.");
     } else {
-      user.name = user.name || "Imran Kabir";
+      user.name = user.name || (process.env.CANDIDATE_NAME || "Sample Candidate");
       user.studentId = candidateStudentId;
       user.email = candidateEmail;
       user.password = hashedPassword;
       user.role = "candidate";
-      user.department = user.department || "Physical Education";
-      user.session = user.session || "2021-22";
+      user.department = user.department || (process.env.CANDIDATE_DEPARTMENT || "Engineering");
+      user.session = user.session || (process.env.CANDIDATE_SESSION || "2021-22");
       user.verificationStatus = "Verified";
 
       await user.save();
@@ -67,9 +67,9 @@ async function resetCandidatePassword() {
     console.log("--------------------------------");
     console.log("Login with:");
     console.log("Role: Candidate");
-    console.log("ID / Email: CAND-018");
-    console.log("or Email: candidate18@smartcampus.edu");
-    console.log("Password: candidate123");
+    console.log("ID / Email: " + candidateStudentId);
+    console.log("or Email: " + candidateEmail);
+    console.log("Password: [Check your .env file]");
     console.log("--------------------------------");
 
     await mongoose.disconnect();
